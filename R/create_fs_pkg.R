@@ -52,7 +52,7 @@ create_fs_pkg <- function(pkg_name,
   # this function will check you have the appropriate tools to create an R
   # package installed.
 
-  check_tools <- pkgbuild::check_build_tools(pkg_name)
+  check_tools <- pkgbuild::has_build_tools()
 
   if (check_tools == FALSE) {
     cli::cli_alert_danger(cli::col_red("Not all tools to build backages installed!"))
@@ -88,7 +88,16 @@ create_fs_pkg <- function(pkg_name,
       file = here::here("LICENSE"),
       sep = "\n")
 
-  ## 5. Create README Qmd ----
+
+  ## 5. Run checks ----
+
+  # this function will check that all the core package elements have been
+  # created. It runs various checks and will print a warning message or
+  # error message if things aren't right.
+
+  devtools::check(here::here())
+
+  ## 6. Create README Qmd ----
 
   # this will create a quarto readme with basic information ready
   # to be populated. it will also render an initial version of the
@@ -131,11 +140,4 @@ create_fs_pkg <- function(pkg_name,
   quarto::quarto_render("README.qmd",
                         quiet = TRUE)
 
-  ## 6. Run checks ----
-
-  # this function will check that all the core package elements have been
-  # created. It runs various checks and will print a warning message or
-  # error message if things aren't right.
-
-  devtools::check(here::here())
 }
