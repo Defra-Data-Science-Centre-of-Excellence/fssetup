@@ -1,11 +1,18 @@
 Package: FSsetup
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Title: Package for Producing R Prjects and Packages using the Defra Farming Stats Template
+Version: 0.0.1
+Author: Josh Moatt
+Maintainer: Josh Moatt <joshua.moatt@defra.gov.uk>
+Description: This package contains the functions needed to create an R package
+ or project using the Defra Farming Stats Team template. It adds all the 
+ necessary files and liceneces. It can be run in local repositories or in
+ repositories cloned from GitHub.
 License: MIT + file LICENSE
 Encoding: UTF-8
+Imports:
+    devtools (>= 2.4.5),
+    here (>= 1.0.1),
+    pckgbuild (>= 1.4.4),
+    usethis (>= 2.2.3)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
