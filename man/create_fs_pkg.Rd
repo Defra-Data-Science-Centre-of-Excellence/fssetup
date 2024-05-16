@@ -4,10 +4,19 @@
 \alias{create_fs_pkg}
 \title{Create an R package based on the Farming Stats template}
 \usage{
-create_fs_pkg()
+create_fs_pkg(
+  pkg_name,
+  author,
+  readme_format = c("github", "html", "markdown")
+)
 }
 \arguments{
-\item{pkg_name}{string containg package name.}
+\item{pkg_name}{string containing package name.}
+
+\item{author}{string containing author name and email.}
+
+\item{readme_format}{string indicating readme format.
+can be "github", "html" or "markdown".}
 }
 \value{
 The output will be all the necessary package

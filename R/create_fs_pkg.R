@@ -28,7 +28,12 @@
 #' }
 #'
 #'
-#' @param pkg_name string containg package name.
+#' @param pkg_name string containing package name.
+#'
+#' @param author string containing author name and email.
+#'
+#' @param readme_format string indicating readme format.
+#' can be "github", "html" or "markdown".
 #'
 #' @return
 #' The output will be all the necessary package
@@ -36,7 +41,11 @@
 #'
 #' @export
 
-create_fs_pkg <- function() {
+create_fs_pkg <- function(pkg_name,
+                          author,
+                          readme_format = c("github",
+                                            "html",
+                                            "markdown")) {
 
   ## 1. Check tools ----
 
@@ -79,8 +88,50 @@ create_fs_pkg <- function() {
       file = here::here("LICENSE"),
       sep = "\n")
 
+  ## 5. Create README Qmd ----
 
-  ## 5. Run checks ----
+  # this will create a quarto readme with basic information ready
+  # to be populated. it will also render an initial version of the
+  # readme in gfm format (ready for github).
+
+  # output format
+  if (readme_format == "github") {
+    out_format <- "  gfm: default\n"
+  } else if (readme_format == "html") {
+    out_format <- stringr::str_c("  html:\n",
+                                 "    self-contained: true\n")
+  } else {
+    out_format <- "  markdown: default\n"
+  }
+
+  # create string
+  readme_txt <- stringr::str_c("---\n",
+                                "title: ", pkg_name, " package\n",
+                                "author: ", author, "\n",
+                                "date: today\n",
+                                "date-format: \"DD/MM/YYYY\"\n",
+                               "format:\n",
+                                out_format,
+                                "toc: true\n",
+                                "editor_options:\n",
+                                "  chunk_output_type: console\n",
+                                "---\n",
+                                "\n",
+                                "## Introduction\n",
+                                "README for ", pkg_name, " package.\n",
+                               "\n",
+                               "This should be edited manually with key info about the package.\n")
+
+  # create qmd
+  cat(readme_txt,
+      file = here::here("README.qmd"),
+      sep = "\n")
+
+  # render Qmd
+  quarto::quarto_render("README.qmd",
+                        quiet = TRUE)
+
+  ## 6. Run checks ----
 
   # this function will check that all the core package elements have been
   # created. It runs various checks and will print a warning message or

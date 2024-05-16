@@ -15,6 +15,7 @@ Imports:
     glue (>= 1.7.0),
     here (>= 1.0.1),
     pkgbuild (>= 1.4.4),
+    quarto (>= 1.4),
     stringr (>= 1.5.1),
     usethis (>= 2.2.3)
 Roxygen: list(markdown = TRUE)
