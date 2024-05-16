@@ -10,9 +10,12 @@ Description: This package contains the functions needed to create an R package
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
+    cli (>= 3.6.2),
     devtools (>= 2.4.5),
+    glue (>= 1.7.0),
     here (>= 1.0.1),
-    pckgbuild (>= 1.4.4),
+    pkgbuild (>= 1.4.4),
+    stringr (>= 1.5.1),
     usethis (>= 2.2.3)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1

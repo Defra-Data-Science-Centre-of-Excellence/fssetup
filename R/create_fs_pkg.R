@@ -28,9 +28,7 @@
 #' }
 #'
 #'
-#' @param argument description add more as needed
-#'
-#' @param argument description add more as needed
+#' @param pkg_name string containg package name.
 #'
 #' @return
 #' The output will be all the necessary package
@@ -42,33 +40,51 @@ create_fs_pkg <- function() {
 
   ## 1. Check tools ----
 
-  pkgbuild::check_build_tools()
-
   # this function will check you have the appropriate tools to create an R
   # package installed.
 
+  check_tools <- pkgbuild::check_build_tools(pkg_name)
+
+  if (check_tools == FALSE) {
+    cli::cli_alert_danger(cli::col_red("Not all tools to build backages installed!"))
+    cli::cli_alert_info(cli::col_blue("Check available packages and install missing dependencies"))
+    stop("Missing tools")
+  } else if (check_tools == TRUE) {
+    cli::cli_alert_success(cli::col_green("All tools found - your system is ready to build packages!"))
+  }
+
+
   ## 2. Add core package files ----
+
+  # this function will add all the core package files to the project folder
+  # we are in.
 
   devtools::create(here::here())
 
-  # this function will add all the core package files to the project folder
-  # we are in (note need to have opened your package as an R project before
-  # this step is run). It will add things like the Description file, R folder
-  # etc etc.
+  ## 3. Add MIT licence ----
 
-  ## 3. Add licence ----
+  # This will add the basic MIT licence.
+  usethis::use_mit_license(copyright_holder = glue::glue("{pkg_name}"))
 
-  usethis::use_mit_license(here::here())
 
-  # this will add the basic MIT licence. To which we can add a Defra specific
-  # one.
+  ## 4. Add Crown Copyright ----
 
-  ## 4. Run checks ----
+  # create string
+  defra_licence <- stringr::str_c("YEAR: ",
+                                  format(Sys.Date(), "%Y"),"\n",
+                                  "COPYRIGHT HOLDER: Crown Copyright Defra")
 
-  devtools::check(here::here())
+  # save Licence
+  cat(defra_licence,
+      file = here::here("LICENSE"),
+      sep = "\n")
+
+
+  ## 5. Run checks ----
 
   # this function will check that all the core package elements have been
   # created. It runs various checks and will print a warning message or
   # error message if things aren't right.
 
+  devtools::check(here::here())
 }

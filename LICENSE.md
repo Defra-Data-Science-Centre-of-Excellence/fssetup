@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2024 C:/Users/jm000251/OneDrive - Defra/R/GitHub Repos/FSsetup
+Copyright (c) 2024 FSsetup Authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
