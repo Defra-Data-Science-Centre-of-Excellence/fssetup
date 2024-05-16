@@ -1,6 +1,6 @@
 FSsetup package
 ================
-jpm
+Josh Moatt <joshua.moatt@defra.gov.uk>
 16/05/2024
 
 - <a href="#introduction" id="toc-introduction">Introduction</a>

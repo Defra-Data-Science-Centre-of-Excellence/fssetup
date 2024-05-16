@@ -1,6 +1,6 @@
 ---
 title: FSsetup package
-author: jpm
+author: Josh Moatt <joshua.moatt@defra.gov.uk>
 date: today
 date-format: "DD/MM/YYYY"
 format:
