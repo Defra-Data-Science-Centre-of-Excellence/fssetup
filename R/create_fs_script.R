@@ -1,0 +1,122 @@
+#' @title
+#' Create a new script with farming stats header.
+#'
+#' @description
+#' This function will create a new script with
+#' the farming stats header added. There a multiple
+#' options for cutomisation (see details).
+#'
+#' @details
+#' This is a simple function to create a new script
+#' with the farming stats header template added.
+#'
+#' By just calling the function a script will be
+#' created with the template entered. All fields of
+#' the template will be blank except for the date,
+#' which is set to today's date.
+#'
+#' There are options for customising and entering
+#' some details automatically. The details that can
+#' be pre-entered are:
+#' #' \itemize{
+#'    \item script name
+#'    \item location to save
+#'    \item author
+#'    \item author's email
+#'    \item date created
+#' }
+#'
+#' By default these are set to NULL (except for the
+#' date). But can be set to any string.
+#'
+#' @param file_name string containing desired name
+#' for script.
+#'
+#' @param folder string containing folder name to
+#' save script. This is built on the `here()` function
+#' in R, so will follow your root directory. If you
+#' want to save in a sub-folder, enter the full folder
+#' sequence, e.g. "folder/sub-folder".
+#'
+#' @param author string containing author's name.
+#'
+#' @param email string containing author's email.
+#'
+#' @param date string containing a date. By default,
+#' this will be set as today's date.
+#'
+#' @return
+#' An R script will be saved in the root directory
+#' or in the specified folder.
+#'
+#' @export
+
+add_fs_script <- function(file_name = NULL,
+                          folder = NULL,
+                          author = NULL,
+                          email = NULL,
+                          date = format(Sys.Date(), "%d/%m/%Y")) {
+  # header
+  header <- stringr::str_c(
+    "## - - - - - - - - - - - - - -\n",
+    "##\n",
+    "## Organisation: Defra Agri-Foodchain Directorate (Evidence & Analysis)\n",
+    "##\n",
+    "## Project:\n",
+    "##\n",
+    "## Script name: \n",
+    "##\n",
+    "## Purpose of script: \n",
+    "##\n",
+    "## Author: ", author, "\n",
+    "##\n",
+    "## Email: ", email, "\n",
+    "##\n",
+    "## Date Created: ", date, "\n",
+    "##\n",
+    "## - - - - - - - - - - - - - -\n",
+    "## Notes:\n",
+    "##\n" ,
+    "##\n",
+    "## - - - - - - - - - - - - - -\n",
+    "## Packages:\n",
+    "\n",
+    "# Pacman\n",
+    "if(!require(pacman)){\n",
+    "  install.packages(\"pacman\")\n",
+    "  library(pacman) # for automatic install of missing packaged through p_load\n",
+    "}\n",
+    "\n",
+    "# Common packages (add additional packages as needed):\n",
+    "p_load(\n",
+    "  glue,\n",
+    "  here,\n",
+    "  openxlsx,\n",
+    "  readODS,\n",
+    "tidyverse\n",
+    ")\n",
+    "\n",
+    "## - - - - - - - - - - - - - -\n",
+    "## Functions:\n",
+    "\n",
+    "## - - - - - - - - - - - - - -\n",
+    "\n"
+  )
+
+  # file name
+  name_script <- ifelse(is.null(file_name),
+                        "New Script",
+                        file_name)
+
+  # file path
+  add_to <- ifelse(is.null(folder),
+                   here::here(glue::glue("{name_script}.R")),
+                   here::here(glue::glue("{folder}"),
+                              glue::glue("{name_script}.R")))
+
+
+  # create qmd
+  cat(header,
+      file = add_to,
+      sep = "\n")
+}
