@@ -147,7 +147,7 @@ create_fs_script_template <- function(format = c("farming_stats",
         file = fs::path_expand("~/AppData/Roaming/RStudio/templates/default.R"),
         sep = "\n")
 
-  } else if (format == "manual") {
+  } else if (format == "manual_edit") {
     # create template file if it doesn't exist already
     if (!fs::file_exists("~/AppData/Roaming/RStudio/templates")) {
       fs::dir_create(path = "~/AppData/Roaming/RStudio/templates")
