@@ -66,7 +66,7 @@ create_fs_readme <- function(type = c("project",
   # author details
   if (!is.null(author)) {
     author <- author
-  } else{
+  } else {
     author <- "add author"
   }
 

@@ -85,13 +85,13 @@ create_fs_proj <- function(readme_format = c("markdown",
   }
 
   # add pipeline script
-  FSsetup::create_fs_script(file_name = "pipeline")
+  FSsetup::create_fs_script(file_name = "pipeline",
+                            author = NULL)
 
   # add readme
   FSsetup::create_fs_readme(type = "project",
                             format = readme_format,
-                            file_path = file_path,
-                            author = author,
+                            file_path = path,
                             readme_title = glue::glue("README for {pkg_name} package"))
 
 }
