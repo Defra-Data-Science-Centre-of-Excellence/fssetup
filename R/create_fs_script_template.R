@@ -62,11 +62,11 @@
 #'
 #' @export
 
-create_script_template <- function(format = c("farming_stats",
-                                              "custom",
-                                              "manual_edit",
-                                              "blank"),
-                                   template = NULL) {
+create_fs_script_template <- function(format = c("farming_stats",
+                                                 "custom",
+                                                 "manual_edit",
+                                                 "blank"),
+                                      template = NULL) {
 
 
 

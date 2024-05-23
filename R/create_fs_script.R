@@ -51,11 +51,11 @@
 #'
 #' @export
 
-add_fs_script <- function(file_name = NULL,
-                          folder = NULL,
-                          author = NULL,
-                          email = NULL,
-                          date = format(Sys.Date(), "%d/%m/%Y")) {
+create_fs_script <- function(file_name = NULL,
+                             folder = NULL,
+                             author = NULL,
+                             email = NULL,
+                             date = format(Sys.Date(), "%d/%m/%Y")) {
   # header
   header <- stringr::str_c(
     "## - - - - - - - - - - - - - -\n",
