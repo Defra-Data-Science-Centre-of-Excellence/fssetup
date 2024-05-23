@@ -92,26 +92,23 @@ create_fs_readme <- function(type = c("project",
                                "  chunk_output_type: console\n",
                                "---\n",
                                "\n",
-                               "## :book: Introduction\n",
-                               "Introduce you project here. Things to cover in the introduction:\n",
+                               "## Introduction \n",
+                               "Introduce you project here. Things to cover in the introduction: \n",
+                               "\n",
                                "* Motivation/purpose of the project\n",
                                "* Any key inputs\n",
                                "* Where is the project used\n",
                                "* What are the key outputs\n",
                                "* Where are the outputs used\n",
-                               "Below are some pre-defined headings which we think
-                               it would be useful for you to include.",
+                               "Below are some pre-defined headings which we think it would be useful for you to include.\n",
                                "\n",
-                               "## :file_folder: Project structure\n",
-                               "Include a description of the project strucutre here.
-                               Outline what each folder contains and how/where it's used.
-                               A table can be useful here.\n",
+                               "## Project structure \n",
+                               "Include a description of the project strucutre here. Outline what each folder contains and how/where it's used. A table can be useful here.\n",
                                "\n",
-                               "## :runner: How to run\n",
-                               "Here explain how to run the project. This should not be a
-                               line by line description of the code, rather an overview of how
-                               to run the project (e.g. script order etc).\n",
+                               "## How to run \n",
+                               "Here explain how to run the project. This should not be a line by line description of the code, rather an overview of how to run the project (e.g. script order etc).\n",
                                "\n")
+
   } else if (type == "package") {
     readme_txt <- stringr::str_c("---\n",
                                  "title: ", pkg_name, " package\n",
