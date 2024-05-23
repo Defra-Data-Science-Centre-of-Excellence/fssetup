@@ -111,7 +111,7 @@ create_fs_readme <- function(type = c("project",
 
   } else if (type == "package") {
     readme_txt <- stringr::str_c("---\n",
-                                 "title: ", pkg_name, " package\n",
+                                 "title: ", readme_title, "\n",
                                  "author: ", author, "\n",
                                  "date: today\n",
                                  "date-format: \"DD/MM/YYYY\"\n",
@@ -123,7 +123,7 @@ create_fs_readme <- function(type = c("project",
                                  "---\n",
                                  "\n",
                                  "## Introduction\n",
-                                 "README for ", pkg_name, " package.\n",
+                                 readme_title, "\n",
                                  "\n",
                                  "This should be edited manually with key info about the package.\n")
   }
