@@ -103,10 +103,12 @@ create_fs_pkg <- function(pkg_name,
   # to be populated. it will also render an initial version of the
   # readme in gfm format (ready for github).
 
+  readme_title <- glue::glue("README for {pkg_name} package")
+
   FSsetup::create_fs_readme(type = "package",
                             format = readme_format,
                             author = author,
-                            readme_title = stringr::str_c("README for ", pkg_name, " package"))
+                            readme_title = readme_title)
 
 
   # # output format
