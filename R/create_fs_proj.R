@@ -91,7 +91,6 @@ create_fs_proj <- function(readme_format = c("markdown",
   # add readme
   FSsetup::create_fs_readme(type = "project",
                             format = readme_format,
-                            file_path = path,
-                            readme_title = glue::glue("README for {pkg_name} package"))
+                            file_path = path)
 
 }
