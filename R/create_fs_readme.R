@@ -103,10 +103,10 @@ create_fs_readme <- function(type = c("project",
                                "Below are some pre-defined headings which we think it would be useful for you to include.\n",
                                "\n",
                                "## Project structure \n",
-                               "Include a description of the project strucutre here. Outline what each folder contains and how/where it's used. A table can be useful here.\n",
+                               "Include a description of the project structure here. Outline what each folder contains and how/where it's used. A table can be useful here.\n",
                                "\n",
                                "## How to run \n",
-                               "Here explain how to run the project. This should not be a line by line description of the code, rather an overview of how to run the project (e.g. script order etc).\n",
+                               "Here explain how to run the project. This should not be a line by line description of the code, rather an overview of how to run the project (what order to run the scripts etc).\n",
                                "\n")
 
   } else if (type == "package") {
