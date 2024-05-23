@@ -118,7 +118,7 @@ create_script_template <- function(format = c("farming_stats",
       ")",
       "",
       "## - - - - - - - - - - - - - -",
-      "## Functions:",
+      "## Sourced files:",
       "",
       "## - - - - - - - - - - - - - -",
       ""

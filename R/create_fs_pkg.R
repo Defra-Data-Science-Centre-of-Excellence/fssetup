@@ -103,41 +103,47 @@ create_fs_pkg <- function(pkg_name,
   # to be populated. it will also render an initial version of the
   # readme in gfm format (ready for github).
 
-  # output format
-  if (readme_format == "github") {
-    out_format <- "  gfm: default\n"
-  } else if (readme_format == "html") {
-    out_format <- stringr::str_c("  html:\n",
-                                 "    self-contained: true\n")
-  } else {
-    out_format <- "  markdown: default\n"
-  }
+  FSsetup::create_fs_readme(type = "package",
+                            format = readme_format,
+                            author = author,
+                            readme_title = glue::glue("README for {pkg_name} package"))
 
-  # create string
-  readme_txt <- stringr::str_c("---\n",
-                                "title: ", pkg_name, " package\n",
-                                "author: ", author, "\n",
-                                "date: today\n",
-                                "date-format: \"DD/MM/YYYY\"\n",
-                               "format:\n",
-                                out_format,
-                                "toc: true\n",
-                                "editor_options:\n",
-                                "  chunk_output_type: console\n",
-                                "---\n",
-                                "\n",
-                                "## Introduction\n",
-                                "README for ", pkg_name, " package.\n",
-                               "\n",
-                               "This should be edited manually with key info about the package.\n")
 
-  # create qmd
-  cat(readme_txt,
-      file = here::here("README.qmd"),
-      sep = "\n")
+  # # output format
+  # if (readme_format == "github") {
+  #   out_format <- "  gfm: default\n"
+  # } else if (readme_format == "html") {
+  #   out_format <- stringr::str_c("  html:\n",
+  #                                "    self-contained: true\n")
+  # } else {
+  #   out_format <- "  markdown: default\n"
+  # }
+  #
+  # # create string
+  # readme_txt <- stringr::str_c("---\n",
+  #                               "title: ", pkg_name, " package\n",
+  #                               "author: ", author, "\n",
+  #                               "date: today\n",
+  #                               "date-format: \"DD/MM/YYYY\"\n",
+  #                              "format:\n",
+  #                               out_format,
+  #                               "toc: true\n",
+  #                               "editor_options:\n",
+  #                               "  chunk_output_type: console\n",
+  #                               "---\n",
+  #                               "\n",
+  #                               "## Introduction\n",
+  #                               "README for ", pkg_name, " package.\n",
+  #                              "\n",
+  #                              "This should be edited manually with key info about the package.\n")
+  #
+  # # create qmd
+  # cat(readme_txt,
+  #     file = here::here("README.qmd"),
+  #     sep = "\n")
 
-  # render Qmd
-  quarto::quarto_render("README.qmd",
-                        quiet = TRUE)
+  # # render Qmd
+  # quarto::quarto_render("README.qmd",
+  #                       quiet = TRUE)
 
 }
