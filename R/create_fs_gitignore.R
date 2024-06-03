@@ -41,7 +41,8 @@
 #' A gitignore file is added to the project.
 #'
 #' @export
-create_fs_gitignore <- function (type = c("default", "custom"),
+create_fs_gitignore <- function (type = c("default",
+                                          "custom"),
                                  file_path = NULL,
                                  custom_txt = NULL) {
 
@@ -49,7 +50,7 @@ create_fs_gitignore <- function (type = c("default", "custom"),
   if (!is.null(file_path)) {
     path = file_path
   } else {
-    file_path <- here::here()
+    path <- here::here()
   }
 
   # set readme text.
@@ -76,6 +77,7 @@ create_fs_gitignore <- function (type = c("default", "custom"),
     if (is.null(custom_txt) == TRUE) {
       cli::cli_alert_danger(cli::col_red("Type set to custom but no custom_txt provided!\n"))
       cli::cli_alert_info(cli::col_cyan("Please provide custom_txt or set type to default."))
+      return(invisible(NULL))
     } else {
       gitignore_txt <- custom_txt
     }
