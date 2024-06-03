@@ -93,4 +93,7 @@ create_fs_proj <- function(readme_format = c("markdown",
                             format = readme_format,
                             file_path = path)
 
+  # add gitignore template
+  FSsetup::create_fs_gitignore()
+
 }

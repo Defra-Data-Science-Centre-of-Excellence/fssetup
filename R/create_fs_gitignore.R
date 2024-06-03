@@ -40,10 +40,12 @@
 #' A gitignore file is added to the project.
 #'
 #' @export
-create_fs_gitignore <- function (type = c("default",
-                                          "custom"),
+create_fs_gitignore <- function (type = "default",
                                  file_path = NULL,
                                  custom_txt = NULL) {
+
+  # check type is entered correctly
+  type <- match.arg(type, choices = c("default", "custom"))
 
   # path to save
   if (!is.null(file_path)) {

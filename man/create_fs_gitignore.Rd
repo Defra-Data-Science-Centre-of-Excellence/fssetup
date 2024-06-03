@@ -4,11 +4,7 @@
 \alias{create_fs_gitignore}
 \title{Create a gitignore file based on the Farming Stats template}
 \usage{
-create_fs_gitignore(
-  type = c("default", "custom"),
-  file_path = NULL,
-  custom_txt = NULL
-)
+create_fs_gitignore(type = "default", file_path = NULL, custom_txt = NULL)
 }
 \arguments{
 \item{type}{description controlling which gitignore
