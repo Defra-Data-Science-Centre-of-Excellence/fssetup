@@ -72,9 +72,9 @@ create_fs_gitignore <- function (type = c("default", "custom"),
                                     "03_outputs/ \n",
                                     "\n",
                                     "# add additional files as required")
-  } else if (type == "custom" & !is.null(custom_txt)) {
+  } else if (type == "custom" | !is.null(custom_txt)) {
     gitignore_txt <- custom_txt
-  }  else if (type == "custom" & is.null(custom_txt)){
+  }  else if (type == "custom" | is.null(custom_txt)){
     cli::cli_alert_danger(cli::col_red("Type set to custom but no custom_txt provided!\n"))
     cli::cli_alert_info(cli::col_cyan("Please provide custom_txt or set type to default."))
   }
