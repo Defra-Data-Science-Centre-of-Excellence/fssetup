@@ -47,7 +47,7 @@ create_fs_gitignore <- function (type = c("default",
                                  custom_txt = NULL) {
 
   # path to save
-  if (is.null(file_path)) {
+  if (!is.null(file_path)) {
     path <- file_path
   } else {
     path <- here::here()
