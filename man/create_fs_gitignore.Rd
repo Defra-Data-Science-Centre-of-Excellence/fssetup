@@ -4,22 +4,13 @@
 \alias{create_fs_gitignore}
 \title{Create a gitignore file based on the Farming Stats template}
 \usage{
-create_fs_gitignore(
-  type = c("default", "custom"),
-  file_path = NULL,
-  custom_txt = NULL
-)
+create_fs_gitignore(type = c("default", "custom"), custom_txt = NULL)
 }
 \arguments{
 \item{type}{description controlling which gitignore
 is added. "default" will add the standard template.
 "custom" will enable the user to provide a custom
 template via \code{custom_txt}.}
-
-\item{file_path}{optional argument allowing users
-to specify file path where gitignore should be created.
-If not entered, will default to current project/working
-directory.}
 
 \item{custom_txt}{optional argument allowing users to
 provide their own gitignore template. Must be provided
