@@ -27,6 +27,11 @@
 #' "custom" will enable the user to provide a custom
 #' template via `custom_txt`.
 #'
+#' @param file_path optional argument allowing users
+#' to specify file path where gitignore should be created.
+#' If not entered, will default to current project/working
+#' directory.
+#'
 #' @param custom_txt optional argument allowing users to
 #' provide their own gitignore template. Must be provided
 #' as a string. Only used if type set to "custom".
@@ -37,7 +42,15 @@
 #' @export
 create_fs_gitignore <- function (type = c("default",
                                           "custom"),
+                                 file_path = NULL,
                                  custom_txt = NULL) {
+
+  # path to save
+  if (!is.null(file_path)) {
+    path <- file_path
+  } else {
+    path <- here::here()
+  }
 
   # set readme text.
   if (type == "default") {
@@ -71,6 +84,6 @@ create_fs_gitignore <- function (type = c("default",
 
   # save file
   cat(gitignore_txt,
-      file = here::here(".gitignore"),
+      file = glue::glue("{path}/.gitignore"),
       sep = "\n")
 }
