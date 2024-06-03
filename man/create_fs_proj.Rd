@@ -63,5 +63,8 @@ containing functions etc).
 \item README (Qmd and MD) - with all R projects you should provide
 a full README that gives users all the information they need to run
 your project. You should edit this as you develop you project.
+\item gitignore - this will be a skeleton of a gitignore which
+will automatically include all the usual R related files, but also
+the 01_data and 03_outputs folders.
 }
 }
