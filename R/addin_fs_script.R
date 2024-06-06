@@ -76,11 +76,11 @@ addin_fs_script <- function() {
     "## - - - - - - - - - - - - - - \n",
     "## Sourced files: \n",
     "\n",
-    "## - - - - - - - - - - - - - - \n",
-    "\n")
+    "## - - - - - - - - - - - - - - \n")
 
   # Open using Rstudio API
   rstudioapi::documentNew(text = header,
                           type = "r",
-                          execute = FALSE)
+                          execute = FALSE,
+                          position = 43)
 }

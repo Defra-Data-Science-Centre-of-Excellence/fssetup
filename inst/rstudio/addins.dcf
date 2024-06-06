@@ -1,4 +1,9 @@
-Name: Open Farming Stats Script
+Name: Open Farming Stats script
 Description: Opens an R script with Famring Stats template.
 Binding: addin_fs_script
+Interactive: false
+
+Name: Open roxygen script
+Description: Opens an R script with a roxygen template.
+Binding: addin_fs_roxygen
 Interactive: false
