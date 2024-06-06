@@ -1,0 +1,4 @@
+Name: Open Farming Stats Script
+Description: Opens an R script with Famring Stats template.
+Binding: addin_fs_script
+Interactive: false
