@@ -70,7 +70,7 @@ addin_fs_script <- function() {
     "  here, \n",
     "  openxlsx, \n",
     "  readODS, \n",
-    "tidyverse \n",
+    "  tidyverse \n",
     ") \n",
     "\n",
     "## - - - - - - - - - - - - - - \n",
