@@ -132,7 +132,7 @@ create_fs_readme <- function(type = c("project",
   if (!is.null(file_path)) {
     path = file_path
   } else {
-    file_path <- here::here()
+    path <- here::here()
   }
 
   # create qmd
