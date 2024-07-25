@@ -43,7 +43,7 @@ fs_proj <- function(path, ...) {
 
   if (params$pipeline == TRUE) {
     FSsetup::create_fs_script(file_name = "pipeline",
-                              folder = path,
+                              file_path = path,
                               author = params$author)
   }
 

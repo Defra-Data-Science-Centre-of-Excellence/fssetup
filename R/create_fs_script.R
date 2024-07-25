@@ -32,7 +32,7 @@
 #' @param file_name string containing desired name
 #' for script.
 #'
-#' @param folder string containing folder name to
+#' @param file_path string containing folder name to
 #' save script. This is built on the `here()` function
 #' in R, so will follow your root directory. If you
 #' want to save in a sub-folder, enter the full folder
@@ -52,7 +52,7 @@
 #' @export
 
 create_fs_script <- function(file_name = NULL,
-                             folder = NULL,
+                             file_path = NULL,
                              author = NULL,
                              email = NULL,
                              date = format(Sys.Date(), "%d/%m/%Y")) {
@@ -109,9 +109,9 @@ create_fs_script <- function(file_name = NULL,
                         file_name)
 
   # file path
-  add_to <- ifelse(is.null(folder),
+  add_to <- ifelse(is.null(file_path),
                    here::here(glue::glue("{name_script}.R")),
-                   here::here(glue::glue("{folder}"),
+                   here::here(glue::glue("{file_path}"),
                               glue::glue("{name_script}.R")))
 
 

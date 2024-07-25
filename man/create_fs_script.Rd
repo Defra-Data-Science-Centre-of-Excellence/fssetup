@@ -6,7 +6,7 @@
 \usage{
 create_fs_script(
   file_name = NULL,
-  folder = NULL,
+  file_path = NULL,
   author = NULL,
   email = NULL,
   date = format(Sys.Date(), "\%d/\%m/\%Y")
@@ -16,7 +16,7 @@ create_fs_script(
 \item{file_name}{string containing desired name
 for script.}
 
-\item{folder}{string containing folder name to
+\item{file_path}{string containing folder name to
 save script. This is built on the \code{here()} function
 in R, so will follow your root directory. If you
 want to save in a sub-folder, enter the full folder
