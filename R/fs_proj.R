@@ -18,9 +18,20 @@ fs_proj <- function(path, ...) {
   # ensure path exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
+  # collect inputs and paste together as 'Parameter: Value'
+  params <- list()
+  dots <- list(...)
+  for (i in seq_along(dots)) {
+    key <- names(dots)[[i]]
+    val <- dots[[i]]
+    params[[key]] <- val
+  }
+
   FSsetup::create_fs_readme(type = "project",
-                            format = "html",
-                            file_path = path)
+                            format = params$readme,
+                            file_path = path,
+                            author = params$author,
+                            readme_title = params$title)
 
   # set file structure
   structure <- c("01_data", "02_src", "03_outputs")
@@ -28,6 +39,16 @@ fs_proj <- function(path, ...) {
   # add folders based on structure
   for (i in 1:length(structure)) {
     dir.create(glue::glue("{path}/{structure[i]}"))
+  }
+
+  if (params$pipeline == TRUE) {
+    FSsetup::create_fs_script(file_name = "pipeline",
+                              folder = path,
+                              author = params$author)
+  }
+
+  if (params$gitignore == TRUE) {
+    FSsetup::create_fs_gitignore(file_path = path)
   }
 
 }

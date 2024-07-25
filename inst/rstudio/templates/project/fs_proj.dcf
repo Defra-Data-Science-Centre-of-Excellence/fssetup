@@ -3,3 +3,25 @@ Title: Farming Stats Project
 Subtitle: Create a project with the Farming Stats template
 OpenFiles: INDEX
 
+Parameter: title
+Widget: TextInput
+Label: Title
+
+Parameter: author
+Widget: TextInput
+Label: Author
+
+Parameter: readme
+Widget: SelectInput
+Label: Readme output format
+Fields: html, github, markdown
+
+Parameter: pipeline
+Widget: CheckboxInput
+Label: Include pipline script?
+Default: On
+
+Parameter: gitignore
+Widget: CheckboxInput
+Label: Include gitignore?
+Default: Off
