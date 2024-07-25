@@ -6,21 +6,24 @@ OpenFiles: README.qmd
 Parameter: title
 Widget: TextInput
 Label: Title
+position: left
 
 Parameter: author
 Widget: TextInput
 Label: Author
+position: right
 
 Parameter: readme
 Widget: SelectInput
 Label: Readme output format
 Fields: html, github, markdown
+position: left
 
 Parameter: pipeline
 Widget: CheckboxInput
 Label: Include pipline script?
 Default: On
-position: right
+position: left
 
 Parameter: gitignore
 Widget: CheckboxInput
