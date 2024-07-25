@@ -20,7 +20,7 @@ Parameter: pipeline
 Widget: CheckboxInput
 Label: Include pipline script?
 Default: On
-position: left
+position: right
 
 Parameter: gitignore
 Widget: CheckboxInput
