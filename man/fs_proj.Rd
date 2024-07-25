@@ -2,19 +2,18 @@
 % Please edit documentation in R/fs_proj.R
 \name{fs_proj}
 \alias{fs_proj}
-\title{Title}
+\title{Function for RStudio project template}
 \usage{
 fs_proj(path, ...)
 }
-\arguments{
-\item{argument}{description add more as needed}
-}
-\value{
-what is the output
-}
 \description{
-Description of function
-}
-\details{
-Details of function (optional)
+This is a function that is called in the "New project"
+viewer pane when the user chooses a Farming Stats
+Project template. It should not be used away from the
+RStudio viewer. If you would like to manually add project
+files, use the function\code{create_fs_proj} instead.
+
+I have not included additional information on how to use
+this function, as it is not intended to be used outside
+the template call.
 }
