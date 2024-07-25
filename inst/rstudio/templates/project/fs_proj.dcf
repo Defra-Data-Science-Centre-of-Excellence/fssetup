@@ -3,7 +3,6 @@ Title: Farming Stats Project
 Subtitle: Create a project with the Farming Stats template
 OpenFiles: README.qmd
 
-
 Parameter: title
 Widget: TextInput
 Label: Title
@@ -14,20 +13,20 @@ Widget: TextInput
 Label: Author
 Position: right
 
-Parameter: readme
-Widget: SelectInput
-Label: Readme output format
-Fields: html, github, markdown
-Position: left
-
 Parameter: pipeline
 Widget: CheckboxInput
 Label: Include pipline script?
 Default: On
-Position: centre
+Position: left
 
 Parameter: gitignore
 Widget: CheckboxInput
 Label: Include gitignore?
 Default: Off
 Position: right
+
+Parameter: readme
+Widget: SelectInput
+Label: Readme output format
+Fields: html, github, markdown
+Position: left
