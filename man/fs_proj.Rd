@@ -16,4 +16,10 @@ files, use the function\code{create_fs_proj} instead.
 I have not included additional information on how to use
 this function, as it is not intended to be used outside
 the template call.
+
+To subsequently link this to a github repo, the best
+plan is to use \code{usethis::use_github()}. See the
+documentation here:
+
+https://happygitwithr.com/existing-github-last
 }
