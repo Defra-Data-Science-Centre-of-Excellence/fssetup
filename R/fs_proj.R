@@ -12,6 +12,12 @@
 #' this function, as it is not intended to be used outside
 #' the template call.
 #'
+#' To subsequently link this to a github repo, the best
+#' plan is to use `usethis::use_github()`. See the
+#' documentation here:
+#'
+#' https://happygitwithr.com/existing-github-last
+#'
 #' @export
 
 fs_proj <- function(path, ...) {
