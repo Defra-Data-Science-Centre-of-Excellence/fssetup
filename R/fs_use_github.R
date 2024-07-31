@@ -12,7 +12,10 @@
 #' repo needs to be public. Can also be done
 #' in GitHub at a later date.
 #'
-#' @param private if TRUE creates private repo
+#' @param message initial commit message. Default
+#' is "Initial commit".
+#'
+#' @param private if TRUE creates private repo.
 #'
 #' @return
 #' R project is truned into a git repo and an
@@ -21,13 +24,31 @@
 #'
 #' @export
 
-fs_use_github <- function(private = TRUE) {
+fs_use_github <- function(message = "Initial commit",
+                          private = TRUE) {
 
-  ## Need to make Git repo first
-  usethis::use_git()
+  # add fs gitignore
+  FSsetup::create_fs_gitignore()
 
+  # set repo filepath
+  repo <- usethis::proj_get()
+
+  # initialise git repo
+  gert::git_init(repo)
+
+  # select un-staged files
+  uncommitted <- gert::git_status(staged = FALSE)$file
+
+  # stage repo
+  gert::git_add(uncommitted, repo = repo)
+
+  # commit repo
+  gert::git_commit(message, repo = repo)
 
   ## now add repo to github
   usethis::use_github(private = private)
+
+  # restart rstudio to open git pane
+  rstudioapi::openProject(repo)
 
 }

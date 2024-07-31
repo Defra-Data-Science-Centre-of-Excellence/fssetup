@@ -4,10 +4,13 @@
 \alias{fs_use_github}
 \title{Create a GitHub repository from local project.}
 \usage{
-fs_use_github(private = TRUE)
+fs_use_github(message = "Initial commit", private = TRUE)
 }
 \arguments{
-\item{private}{if TRUE creates private repo}
+\item{message}{initial commit message. Default
+is "Initial commit".}
+
+\item{private}{if TRUE creates private repo.}
 }
 \value{
 R project is truned into a git repo and an
