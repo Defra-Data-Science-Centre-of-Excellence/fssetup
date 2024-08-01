@@ -17,7 +17,7 @@ create_fs_script(
 for script.}
 
 \item{file_path}{string containing folder name to
-save script. This is built on the \code{\link[here]{here}} function
+save script. This is built on the here function
 in R, so will follow your root directory. If you
 want to save in a sub-folder, enter the full folder
 sequence, e.g. "folder/sub-folder".}
