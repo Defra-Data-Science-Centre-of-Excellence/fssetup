@@ -28,3 +28,34 @@ to ensure security. Can be change if the
 repo needs to be public. Can also be done
 in GitHub at a later date.
 }
+\details{
+This function will take an existing R project
+on you local machine, turn it into a git repo
+and create a GitHub repository. It will do the
+following:
+\itemize{
+\item add a gitignore
+\item initalise the git repo
+\item stage any uncommitted files
+\item commit the files
+\item create a GitHub repo
+\item restart RStudio to activate the git pane in R
+}
+
+The gitignore is added using the \code{\link{create_fs_gitignore}}
+function within this package.
+
+The repo initialisation, staging and committing is all
+done using the gert package.
+
+Creating the GitHub repo uses the \code{\link[usethis]{use_github}}
+function from the usethis package.
+
+Note: For this function to work you must:
+\itemize{
+\item have git installed on your machine
+\item have a GitHub account
+\item have your GitHub credentials entered into RStudio
+\item have you Personal Access Token (PAT) entered in RStudio
+}
+}
