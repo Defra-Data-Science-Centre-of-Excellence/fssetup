@@ -94,7 +94,7 @@ fs_use_github <- function(message = "Initial commit",
   ## create GitHub repo ----
 
   cli::cli_alert_success(text = "Creating Github repo",wrap = TRUE)
-  cli::cli_alert_info(text = "A GitHub window may open in your browser", wrap = TRUE)
+  cli::cli_alert_info(text = "A GitHub bad gateway window may open in your browser. Refresh the page to see your repo.", wrap = TRUE)
 
   # create GitHub repo
   usethis::use_github(private = private)
