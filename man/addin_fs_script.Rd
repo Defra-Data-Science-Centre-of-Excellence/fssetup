@@ -12,19 +12,19 @@ A script will open in RStudio.
 \description{
 This addin will open a new blank R script which
 is populated with the Farming Stats header. Unlike
-the \code{create_fs_script} function, this addin will also
+the \code{\link{create_fs_script}} function, this addin will also
 pre-populate the date.
 }
 \details{
 This addin will create a new blank script that is
 populated with the farming stats template header.
-Unlike the \code{create_fs_script} function in this
+Unlike the \code{\link{create_fs_script}} function in this
 package, this will auto-populate the script with
 today's date.
 
 Addins must use the rstudioapi package. This
-addin uses the \code{documentNew}function to open
-the new R script.
+addin uses the \code{\link[rstudioapo]{documentNew}}
+function to open the new R script.
 
 Note: this opens an normal untitled script. It
 must be manually saved in the correct directory.

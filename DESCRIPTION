@@ -12,6 +12,7 @@ Encoding: UTF-8
 Imports:
     cli (>= 3.6.2),
     devtools (>= 2.4.5),
+    gert (>= 2.1.0),
     glue (>= 1.7.0),
     here (>= 1.0.1),
     pkgbuild (>= 1.4.4),

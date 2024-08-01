@@ -11,7 +11,7 @@
 #'
 #' Used as default, it will automatically add the
 #' data and output folders (as created in the
-#' `create_fs_proj` function). This is to ensure
+#' \code{\link{create_fs_proj}} function). This is to ensure
 #' nor restricted data or unpublished results are
 #' accidentally pushed to GitHub.
 #'

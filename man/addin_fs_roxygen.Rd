@@ -18,8 +18,8 @@ This addin will create a new blank script that is
 populated with standard roxygen header.
 
 Addins must use the rstudioapi package. This
-addin uses the \code{documentNew}function to open
-the new R script.
+addin uses the \code{\link[rstudioapo]{documentNew}}
+function to open the new R script.
 
 Note: this opens an normal untitled script. It
 must be manually saved in the correct directory.
