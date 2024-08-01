@@ -31,12 +31,12 @@ fs_proj <- function(path, ...) {
   }
 
   # set default author if no text entered
-  params$author <- ifelse(is.null(params$author),
+  params$author <- ifelse(nchar(params$author) < 1,
                           "Author name",
                           params$author)
 
   # set default title if no text entered
-  params$title <- ifelse(is.null(params$title),
+  params$title <- ifelse(nchar(params$title) < 1,
                           "Project title",
                           params$author)
 
