@@ -19,14 +19,8 @@ Label: Include pipline script?
 Default: On
 Position: left
 
-Parameter: gitignore
-Widget: CheckboxInput
-Label: Include gitignore?
-Default: Off
-Position: right
-
 Parameter: readme
 Widget: SelectInput
 Label: Readme output format
 Fields: html, github, markdown
-Position: left
+Position: right
