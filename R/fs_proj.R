@@ -61,8 +61,4 @@ fs_proj <- function(path, ...) {
                               author = params$author)
   }
 
-  if (params$gitignore == TRUE) {
-    FSsetup::create_fs_gitignore(file_path = path)
-  }
-
 }
