@@ -36,7 +36,7 @@ or in the specified folder.
 \description{
 This function will create a new script with
 the farming stats header added. There a multiple
-options for cutomisation (see details).
+options for customization (see details).
 }
 \details{
 This is a simple function to create a new script
