@@ -6,14 +6,12 @@ OpenFiles: README.qmd
 Parameter: title
 Widget: TextInput
 Label: Readme title
-Value: Title?
 Position: left
 
 
 Parameter: author
 Widget: TextInput
 Label: Author
-Value: Author?
 Position: right
 
 Parameter: pipeline
