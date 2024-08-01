@@ -30,15 +30,15 @@ fs_proj <- function(path, ...) {
     params[[key]] <- val
   }
 
-  # set default author if no text entered
-  params$author <- ifelse(nchar(params$author) < 1,
-                          "Author name",
-                          params$author)
-
-  # set default title if no text entered
-  params$title <- ifelse(nchar(params$title) < 1,
-                          "Project title",
-                          params$author)
+  # # set default author if no text entered
+  # params$author <- ifelse(nchar(params$author) < 1,
+  #                         "Author name",
+  #                         params$author)
+  #
+  # # set default title if no text entered
+  # params$title <- ifelse(nchar(params$title) < 1,
+  #                         "Project title",
+  #                         params$author)
 
 
   FSsetup::create_fs_readme(type = "project",
