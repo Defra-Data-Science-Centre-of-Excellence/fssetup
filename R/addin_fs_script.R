@@ -2,29 +2,23 @@
 #' Addin to open new script with Farming Stats template
 #'
 #' @description
-#' This addin will open a new blank R script which
-#' is populated with the Farming Stats header. Unlike
-#' the \code{\link{create_fs_script}} function, this addin will also
+#' This addin will open a new blank R script which is populated with the Farming
+#' Stats header. Unlike the [create_fs_script()] function, this addin will also
 #' pre-populate the date.
 #'
 #' @details
-#' This addin will create a new blank script that is
-#' populated with the farming stats template header.
-#' Unlike the \code{\link{create_fs_script}} function in this
-#' package, this will auto-populate the script with
-#' today's date.
+#' This addin will create a new blank script that is populated with the farming
+#' stats template header. Unlike the [create_fs_script()] function in this
+#' package, this will auto-populate the script with today's date.
 #'
-#' Addins must use the rstudioapi package. This
-#' addin uses the \code{\link[rstudioapo]{documentNew}}
-#' function to open the new R script.
+#' Addins must use the rstudioapi package. This addin uses the [documentNew()]
+#' function from the `rstudioapi` package to open the new R script.
 #'
-#' Note: this opens an normal untitled script. It
-#' must be manually saved in the correct directory.
+#' Note: this opens an normal untitled script. It must be manually saved in the
+#' correct directory.
 #'
-#' This package also contains another addin to
-#' open an R script with a roxygen header, which
-#' can be used for creating scripts within packages.
-#'
+#' This package also contains another addin to open an R script with a roxygen
+#' header, which can be used for creating scripts within packages.
 #'
 #' @return
 #' A script will open in RStudio.

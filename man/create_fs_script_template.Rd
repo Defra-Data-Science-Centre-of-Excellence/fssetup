@@ -10,43 +10,39 @@ create_fs_script_template(
 )
 }
 \arguments{
-\item{format}{what format the template will take. There are
-four options: "farming_stats" (default farming stats template),
-"custom" will apply a custom template (provided as a string),
-"manual_edit" will open the template so you can manually edit
-the template, and "blank" can be used to remove all pre-existing
-templates. Note: manual edit can also be used to edit existing
-templates.}
+\item{format}{what format the template will take. There are four options:
+"farming_stats" (default farming stats template), "custom" will apply a
+custom template (provided as a string), "manual_edit" will open the
+template so you can manually edit the template, and "blank" can be used to
+remove all pre-existing templates. Note: manual edit can also be used to
+edit existing templates.}
 
-\item{template}{default is NULL, only used if format = "custom".
-Used to provide custom template design. Must be provided as
-a string. Must be provided if using format = "custom" or the
-function will return an error.}
+\item{template}{default is NULL, only used if format = "custom". Used to
+provide custom template design. Must be provided as a string. Must be
+provided if using format = "custom" or the function will return an error.}
 }
 \value{
 New .R file created at "~/AppData/Roaming/RStudio/templates/default.R"
 containing the script template
 }
 \description{
-This function can be used to create a default
-R script template. All scripts opened from this
-point will have this template applied as a header.
-More information provided in the details section.
+This function can be used to create a default R script template. All scripts
+opened from this point will have this template applied as a header.
 }
 \details{
-This function is used to create a new template
-for R scripts. This will be the default that all
-subsequent R scripts opened will contain. By doing
-this is it should be easier to follow best practice
-and properly comment all scripts you create.
+This function is used to create a new template for R scripts. This will be
+the default that all subsequent R scripts opened will contain. By doing this
+is it should be easier to follow best practice and properly comment all
+scripts you create.
 
-The default is stored in the appdata folder on your
-c drive: "~/AppData/Roaming/RStudio". It will create
-a "templates" folder where the default will be stored.
+The default is stored in the appdata folder on your c drive:
+"~/AppData/Roaming/RStudio". It will create a "templates" folder where the
+default will be stored.
 
-The function has various ways it can work which will
-give you the ability to create whatever header template
-you wish. It has four ways formatting options:
+The function has various ways it can work which will give you the ability to
+create whatever header template you wish. It has four ways formatting
+options:
+
 \itemize{
 \item farming_stats
 \item custom
@@ -54,18 +50,17 @@ you wish. It has four ways formatting options:
 \item blank
 }
 
-"farming_stats" will pre-load the default script with
-the farming stats template.
+"farming_stats" will pre-load the default script with the farming stats
+template.
 
-"custom" will allow you to provide your own custom template
-as a string, which will then be added to the default.
+"custom" will allow you to provide your own custom template as a string,
+which will then be added to the default.
 
-"manual" will allow you to manually edit the default template.
-It will open it in your R studio window and manual edits can
-be saved. Note, this can also be used to tweak a pre-existing
-template (e.g. to add your name and email to all scripts).
+"manual" will allow you to manually edit the default template. It will open
+it in your R studio window and manual edits can be saved. Note, this can also
+be used to tweak a pre-existing template (e.g. to add your name and email to
+all scripts).
 
-"blank" will delete he default R script and template. This
-returns R back to normal, and any script opened subsequently
-will be blank.
+"blank" will delete the default R script and template. This returns R back to
+normal, and any script opened subsequently will be blank.
 }

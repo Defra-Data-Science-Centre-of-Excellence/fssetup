@@ -10,21 +10,19 @@ addin_fs_roxygen()
 A script will open in RStudio.
 }
 \description{
-This addin will open a new blank R script which
-is populated with a standard roxygen header.
+This addin will open a new blank R script which is populated with a standard
+roxygen header.
 }
 \details{
-This addin will create a new blank script that is
-populated with standard roxygen header.
+This addin will create a new blank script that is populated with standard
+roxygen header.
 
-Addins must use the rstudioapi package. This
-addin uses the \code{\link[rstudioapo]{documentNew}}
-function to open the new R script.
+Addins must use the rstudioapi package. This addin uses the \code{\link[=documentNew]{documentNew()}}
+function from the \code{rstudioapi} package to open the new R script.
 
-Note: this opens an normal untitled script. It
-must be manually saved in the correct directory.
+Note: this opens an normal untitled script. It must be manually saved in the
+correct directory.
 
-This package also contains another addin to
-open an R script with a farming stats header, which
-can be used for creating normal R scripts.
+This package also contains another addin to open an R script with a farming
+stats header, which can be used for creating normal R scripts.
 }

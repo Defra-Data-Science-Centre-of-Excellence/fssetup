@@ -2,18 +2,15 @@
 #' Function for RStudio project template
 #'
 #' @description
-#' This is a function that is called in the "New project"
-#' viewer pane when the user chooses a Farming Stats
-#' Project template. It should not be used away from the
-#' RStudio viewer. If you would like to manually add project
-#' files, use the function \code{\link{create_fs_proj}} instead.
+#' This is a function that is called in the "New project" viewer pane when the
+#' user chooses a Farming Stats Project template. It should not be used away
+#' from the RStudio "New project" viewer.
 #'
-#' I have not included additional information on how to use
-#' this function, as it is not intended to be used outside
-#' the template call.
+#' I have not included additional information on how to use this function, as it
+#' is not intended to be used outside the template call.
 #'
-#' To subsequently link this to a github repo, the best
-#' plan is to use \code{\link{fs_use_github}}.
+#' To subsequently link this to a github repo, the best plan is to use
+#' [fs_use_github()].
 #'
 #' @export
 
@@ -41,7 +38,7 @@ fs_proj <- function(path, ...) {
                           params$author)
 
 
-  FSsetup::create_fs_readme(type = "project",
+  fssetup::create_fs_readme(type = "project",
                             format = params$readme,
                             file_path = path,
                             author = params$author,
@@ -56,7 +53,7 @@ fs_proj <- function(path, ...) {
   }
 
   if (params$pipeline == TRUE) {
-    FSsetup::create_fs_script(file_name = "pipeline",
+    fssetup::create_fs_script(file_name = "pipeline",
                               file_path = path,
                               author = params$author)
   }

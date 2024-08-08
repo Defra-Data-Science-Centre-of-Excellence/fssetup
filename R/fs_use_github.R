@@ -2,21 +2,16 @@
 #' Create a GitHub repository from local project.
 #'
 #' @description
-#' This simple function will turn your local R
-#' project into a git repo, then create a repo
-#' on GitHub and perform the initial set up and
-#' commit.
+#' This simple function will turn your local R project into a git repo, then
+#' create a repo on GitHub and perform the initial set up and commit.
 #'
-#' Note: by default creates a private repo
-#' to ensure security. Can be change if the
-#' repo needs to be public. Can also be done
-#' in GitHub at a later date.
+#' Note: by default creates a private repo to ensure security. Can be change if
+#' the repo needs to be public. Can also be done in GitHub at a later date.
 #'
 #' @details
-#' This function will take an existing R project
-#' on you local machine, turn it into a git repo
-#' and create a GitHub repository. It will do the
-#' following:
+#' This function will take an existing R project on you local machine, turn it
+#' into a git repo and create a GitHub repository. It will do the following:
+#'
 #' \itemize{
 #'    \item add a gitignore
 #'    \item initalise the git repo
@@ -26,23 +21,23 @@
 #'    \item restart RStudio to activate the git pane in R
 #' }
 #'
-#' The gitignore is added using the \code{\link{create_fs_gitignore}}
-#' function within this package.
+#' The gitignore is added using the [create_fs_gitignore()] function within this
+#' package.
 #'
-#' The repo initialisation, staging and committing is all
-#' done using the gert package.
+#' The repo initialisation, staging and committing is all done using the `gert`
+#' package.
 #'
-#' Creating the GitHub repo uses the \code{\link[usethis]{use_github}}
-#' function from the usethis package.
+#' Creating the GitHub repo uses the [use_github()] function from the `usethis`
+#' package.
 #'
 #' Note: For this function to work you must:
+#'
 #' \itemize{
 #'    \item have git installed on your machine
 #'    \item have a GitHub account
 #'    \item have your GitHub credentials entered into RStudio
 #'    \item have you Personal Access Token (PAT) entered in RStudio
 #' }
-
 #'
 #' @param message initial commit message. Default
 #' is "Initial commit".
@@ -50,9 +45,8 @@
 #' @param private if TRUE creates private repo.
 #'
 #' @return
-#' R project is truned into a git repo and an
-#' associated github repo si created in the users
-#' github account.
+#' R project is truned into a git repo and an associated github repo si created
+#' in the users github account.
 #'
 #' @export
 
@@ -64,7 +58,7 @@ fs_use_github <- function(message = "Initial commit",
   cli::cli_alert_success(text = "Adding gitignore", wrap = TRUE)
 
   # add file
-  FSsetup::create_fs_gitignore()
+  fssetup::create_fs_gitignore()
 
   ## initialise project as git repo ----
 

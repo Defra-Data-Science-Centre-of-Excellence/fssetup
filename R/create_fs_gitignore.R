@@ -2,39 +2,33 @@
 #' Create a gitignore file based on the Farming Stats template
 #'
 #' @description
-#' Use this function to create a gitignore for a
-#' Farming Stats project.
+#' Use this function to create a gitignore for a Farming Stats project.
 #'
 #' @details
-#' This function will create a gitignore for a
-#' project using a pre-defined Farming Stats template.
+#' This function will create a gitignore for a project using a pre-defined
+#' Farming Stats template.
 #'
-#' Used as default, it will automatically add the
-#' data and output folders (as created in the
-#' \code{\link{create_fs_proj}} function). This is to ensure
-#' nor restricted data or unpublished results are
-#' accidentally pushed to GitHub.
+#' Used as default, it will automatically add the data and output folders (as
+#' created in the fssetup project template). This is to ensure nor restricted
+#' data or unpublished results are accidentally pushed to GitHub.
 #'
-#' Alternatively, a custom gitignore can be provided
-#' by setting `type to` "custom" and providing a custom
-#' template to `custom_txt` as a string.
+#' Alternatively, a custom gitignore can be provided by setting `type to`
+#' "custom" and providing a custom template to `custom_txt` as a string.
 #'
-#' Note it will replace any existing .gitignore
-#' files present in the project already.
+#' Note it will replace any existing .gitignore files present in the project
+#' already.
 #'
-#' @param type description controlling which gitignore
-#' is added. "default" will add the standard template.
-#' "custom" will enable the user to provide a custom
-#' template via `custom_txt`.
+#' @param type description controlling which gitignore is added. "default" will
+#'   add the standard template. "custom" will enable the user to provide a
+#'   custom template via `custom_txt`.
 #'
-#' @param file_path optional argument allowing users
-#' to specify file path where gitignore should be created.
-#' If not entered, will default to current project/working
-#' directory.
+#' @param file_path optional argument allowing users to specify file path where
+#'   gitignore should be created. If not entered, will default to current
+#'   project/working directory.
 #'
-#' @param custom_txt optional argument allowing users to
-#' provide their own gitignore template. Must be provided
-#' as a string. Only used if type set to "custom".
+#' @param custom_txt optional argument allowing users to provide their own
+#'   gitignore template. Must be provided as a string. Only used if type set to
+#'   "custom".
 #'
 #' @return
 #' A gitignore file is added to the project.

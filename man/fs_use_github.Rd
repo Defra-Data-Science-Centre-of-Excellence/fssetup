@@ -13,26 +13,20 @@ is "Initial commit".}
 \item{private}{if TRUE creates private repo.}
 }
 \value{
-R project is truned into a git repo and an
-associated github repo si created in the users
-github account.
+R project is truned into a git repo and an associated github repo si created
+in the users github account.
 }
 \description{
-This simple function will turn your local R
-project into a git repo, then create a repo
-on GitHub and perform the initial set up and
-commit.
+This simple function will turn your local R project into a git repo, then
+create a repo on GitHub and perform the initial set up and commit.
 
-Note: by default creates a private repo
-to ensure security. Can be change if the
-repo needs to be public. Can also be done
-in GitHub at a later date.
+Note: by default creates a private repo to ensure security. Can be change if
+the repo needs to be public. Can also be done in GitHub at a later date.
 }
 \details{
-This function will take an existing R project
-on you local machine, turn it into a git repo
-and create a GitHub repository. It will do the
-following:
+This function will take an existing R project on you local machine, turn it
+into a git repo and create a GitHub repository. It will do the following:
+
 \itemize{
 \item add a gitignore
 \item initalise the git repo
@@ -42,16 +36,17 @@ following:
 \item restart RStudio to activate the git pane in R
 }
 
-The gitignore is added using the \code{\link{create_fs_gitignore}}
-function within this package.
+The gitignore is added using the \code{\link[=create_fs_gitignore]{create_fs_gitignore()}} function within this
+package.
 
-The repo initialisation, staging and committing is all
-done using the gert package.
+The repo initialisation, staging and committing is all done using the \code{gert}
+package.
 
-Creating the GitHub repo uses the \code{\link[usethis]{use_github}}
-function from the usethis package.
+Creating the GitHub repo uses the \code{\link[=use_github]{use_github()}} function from the \code{usethis}
+package.
 
 Note: For this function to work you must:
+
 \itemize{
 \item have git installed on your machine
 \item have a GitHub account

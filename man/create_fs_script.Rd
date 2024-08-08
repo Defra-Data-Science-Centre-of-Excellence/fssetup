@@ -13,44 +13,39 @@ create_fs_script(
 )
 }
 \arguments{
-\item{file_name}{string containing desired name
-for script.}
+\item{file_name}{string containing desired name for script.}
 
-\item{file_path}{string containing folder name to
-save script. This is built on the here function
-in R, so will follow your root directory. If you
-want to save in a sub-folder, enter the full folder
-sequence, e.g. "folder/sub-folder".}
+\item{file_path}{string containing folder name to save script. This is built
+on the here function in R, so will follow your root directory. If you want
+to save in a sub-folder, enter the full folder sequence, e.g.
+"folder/sub-folder".}
 
 \item{author}{string containing author's name.}
 
 \item{email}{string containing author's email.}
 
-\item{date}{string containing a date. By default,
-this will be set as today's date.}
+\item{date}{string containing a date. By default, this will be set as today's
+date.}
 }
 \value{
-An R script will be saved in the root directory
-or in the specified folder.
+An R script will be saved in the root directory or in the specified folder.
 }
 \description{
-This function will create a new script with
-the farming stats header added. There a multiple
-options for customization (see details).
+This function will create a new script with the farming stats header added.
+There a multiple options for customization (see details).
 }
 \details{
-This is a simple function to create a new script
-with the farming stats header template added.
+This is a simple function to create a new script with the farming stats
+header template added.
 
-By just calling the function a script will be
-created with the template entered. All fields of
-the template will be blank except for the date,
-which is set to today's date.
+By just calling the function a script will be created with the template
+entered. All fields of the template will be blank except for the date, which
+is set to today's date.
 
-There are options for customising and entering
-some details automatically. The details that can
-be pre-entered are:
-#' \itemize{
+There are options for customising and entering some details automatically.
+The details that can be pre-entered are:
+
+\itemize{
 \item script name
 \item location to save
 \item author
@@ -58,6 +53,6 @@ be pre-entered are:
 \item date created
 }
 
-By default these are set to NULL (except for the
-date). But can be set to any string.
+By default these are set to NULL (except for the date). But can be set to any
+string.
 }

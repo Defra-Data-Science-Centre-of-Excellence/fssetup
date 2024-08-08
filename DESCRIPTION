@@ -1,12 +1,14 @@
-Package: FSsetup
+Package: fssetup
 Title: Package for Producing R Projects and Scripts Using the Defra Farming Stats Template
 Version: 0.0.1
-Author: Josh Moatt
-Maintainer: Josh Moatt <joshua.moatt@defra.gov.uk>
-Description: This package contains the functions needed to create an R package
- or project using the Defra Farming Stats Team template. It adds all the 
- necessary files and liceneces. It can be run in local repositories or in
- repositories cloned from GitHub.
+Authors@R: person(given = "Josh",
+                  family = "Moatt",
+                  email = "joshua.moatt@defra.gov.uk",
+                  role = c("cre", "aut")
+Description: This package contains the functions needed to create various features
+ in R using the Defra Farming Stats Team templates. Including scripts, projects, readmes and
+ gitignores. It also contains useful functions for linking RStudio and RStudio projects to
+ GitHub. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
@@ -21,5 +23,5 @@ Imports:
     usethis (>= 2.2.3)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-URL: https://github.com/jpmoatt/FSsetup
-BugReports: https://github.com/jpmoatt/FSsetup/issues
+URL: https://github.com/jpmoatt/fssetup
+BugReports: https://github.com/jpmoatt/fssetup/issues
