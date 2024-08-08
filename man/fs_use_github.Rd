@@ -51,6 +51,6 @@ Note: For this function to work you must:
 \item have git installed on your machine
 \item have a GitHub account
 \item have your GitHub credentials entered into RStudio
-\item have you Personal Access Token (PAT) entered in RStudio
+\item have your Personal Access Token (PAT) entered in RStudio
 }
 }

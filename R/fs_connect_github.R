@@ -1,0 +1,71 @@
+#' @title
+#' Connect RStudio to your GitHub account
+#'
+#' @description
+#' This is a simple function which connect RStudio to GitHub, allowing you to
+#' work on GitHub repositories. This is an essential part of Reproducible
+#' Analytical Pipelines and best practice for coding.
+#'
+#' @details
+#' This is a simple function which will set you GitHub credentials and Personal
+#' Access Token (PAT) and connect RStudio to GitHub. This is essential if you
+#' want to work in RStudio in projects/repos stored on GitHub.
+#'
+#' It uses [system()] to run the necessary code in the terminal to set your
+#' credentials, and [gitcreds_set()] and [set_github_pat()] from the `gitcreds`
+#' and `credentials` packages to connect your RStudio to GitHub.
+#'
+#' [gitcreds_set()] is an interactive function and will prompt users for input.
+#' To replace existing credentials/PAT choose option 2. You will then be
+#' prompted for you PAT. PAT should be changed every 30 days to
+#' ensure security.
+#'
+#' Note: For this function to work you must:
+#'
+#' \itemize{
+#'    \item have git installed on your local machine
+#'    \item have a GitHub account
+#'    \item have created a Personal Access Token (PAT) on GitHub.
+#' }
+#'
+#' Guidance on how to create a PAT can be found here: ADD LINK.
+#'
+#' @param username string containing GitHub username
+#'
+#' @param argument string containing email address used for gitHub account
+#'
+#' @return
+#' GitHub credentials and PAT set
+#'
+#' @export
+
+fs_connect_github <- function(username,
+                              email) {
+
+  # set proxy
+  Sys.setenv(https_proxy = "http://secpr7e.demeter.zeus.gsi.gov.uk:80")
+
+  ## this will run the terminal commands ----
+  # proxy
+  system("git config --global http.proxy http://secpr7e.demeter.zeus.gsi.gov.uk:80")
+  # GitHub UUN
+  system(glue::glue('git config --global user.name "{username}"'))
+  # email
+  system(glue::glue('git config --global user.email "{email}"'))
+
+  # check list
+  cli::cli_alert_success("GitHub credentials set too:")
+  system("git config --global --list")
+
+  # set gitcreds - this will prompt for user input
+  gitcreds::gitcreds_set()
+
+  # set PAT
+  credentials::set_github_pat()
+
+  # check pat set
+  pat <- Sys.getenv("GITHUB_PAT")
+  cli::cli_alert_success("GitHub pat is {pat}")
+  cli::cli_alert_warning("Check this is as expected!")
+
+}

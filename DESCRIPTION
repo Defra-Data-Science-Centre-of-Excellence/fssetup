@@ -13,8 +13,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
     cli (>= 3.6.2),
+    credentials (>= 2.0.1),
     devtools (>= 2.4.5),
     gert (>= 2.1.0),
+    gitcreds (>= 0.1.2),
     glue (>= 1.7.0),
     here (>= 1.0.1),
     pkgbuild (>= 1.4.4),
