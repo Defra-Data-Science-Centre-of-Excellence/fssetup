@@ -4,7 +4,7 @@ Version: 0.0.1
 Authors@R: person(given = "Josh",
                   family = "Moatt",
                   email = "joshua.moatt@defra.gov.uk",
-                  role = c("cre", "aut")
+                  role = c("cre", "aut"))
 Description: This package contains the functions needed to create various features
  in R using the Defra Farming Stats Team templates. Including scripts, projects, readmes and
  gitignores. It also contains useful functions for linking RStudio and RStudio projects to
