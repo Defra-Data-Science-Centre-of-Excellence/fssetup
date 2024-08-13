@@ -35,7 +35,7 @@ fs_proj <- function(path, ...) {
   # set default title if no text entered
   params$title <- ifelse(nchar(params$title) < 1,
                           "Project title",
-                          params$author)
+                          params$title)
 
 
   fssetup::create_fs_readme(type = "project",
