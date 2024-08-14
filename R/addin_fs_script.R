@@ -53,7 +53,7 @@ addin_fs_script <- function() {
     "## Packages: \n",
     "\n",
     "# Pacman \n",
-    "if(!require(pacman)){ \n",
+    "if (!require(pacman)) { \n",
     "  install.packages(\"pacman\") \n",
     "  library(pacman) # for automatic install of missing packaged through p_load \n",
     "} \n",

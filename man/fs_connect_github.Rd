@@ -9,7 +9,7 @@ fs_connect_github(username, email)
 \arguments{
 \item{username}{string containing GitHub username}
 
-\item{argument}{string containing email address used for gitHub account}
+\item{email}{string containing email address used for gitHub account}
 }
 \value{
 GitHub credentials and PAT set

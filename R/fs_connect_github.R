@@ -32,7 +32,7 @@
 #'
 #' @param username string containing GitHub username
 #'
-#' @param argument string containing email address used for gitHub account
+#' @param email string containing email address used for gitHub account
 #'
 #' @return
 #' GitHub credentials and PAT set

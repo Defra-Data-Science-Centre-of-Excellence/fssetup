@@ -6,20 +6,39 @@ Josh Moatt <joshua.moatt@defra.gov.uk>
 - <a href="#overview" id="toc-overview">Overview</a>
 - <a href="#installing-fssetup" id="toc-installing-fssetup">Installing
   <code>fssetup</code></a>
-- <a href="#features" id="toc-features">Features</a>
-  - <a href="#projects" id="toc-projects">Projects</a>
-  - <a href="#scripts-templates" id="toc-scripts-templates">Scripts
-    templates</a>
-  - <a href="#addins" id="toc-addins">Addins</a>
-  - <a href="#github-integration" id="toc-github-integration">GitHub
-    integration</a>
+- <a href="#projects" id="toc-projects">Projects</a>
+  - <a href="#the-project-template" id="toc-the-project-template">The
+    project template</a>
+  - <a href="#starting-a-new-project"
+    id="toc-starting-a-new-project">Starting a new project</a>
+- <a href="#script-templates" id="toc-script-templates">Script
+  templates</a>
+  - <a href="#default-template" id="toc-default-template">Default
+    template</a>
+  - <a href="#custom-template" id="toc-custom-template">Custom template</a>
+  - <a href="#manually-edit-the-template"
+    id="toc-manually-edit-the-template">Manually edit the template</a>
+  - <a href="#removing-the-template" id="toc-removing-the-template">Removing
+    the template</a>
+- <a href="#github-integration" id="toc-github-integration">GitHub
+  integration</a>
+  - <a href="#setting-your-github-credentials-and-personal-access-token."
+    id="toc-setting-your-github-credentials-and-personal-access-token.">Setting
+    your GitHub credentials and Personal Access Token.</a>
+  - <a href="#creating-a-github-repo-for-an-r-project."
+    id="toc-creating-a-github-repo-for-an-r-project.">Creating a GitHub repo
+    for an R project.</a>
+- <a href="#addins" id="toc-addins">Addins</a>
+- <a href="#section" id="toc-section"></a>
 
 ## Overview
 
-This package contains the functions needed to create various features in
-R using the Defra Farming Stats Team templates. Including scripts,
-projects, README and gitignores. It also contains useful functions for
-linking RStudio and RStudio projects to GitHub.
+The aim of the `fssetup` package is to standardise how we use R and
+encourage the use of coding best practice across Farming Stats. The
+package contains the functions needed to create various features in R
+using the Farming Stats Team templates. Including scripts, projects,
+READMEs and gitignores. It also contains useful functions for linking
+RStudio and RStudio projects to GitHub.
 
 ## Installing `fssetup`
 
@@ -36,15 +55,7 @@ install.packages("~/Downloads/fssetup.zip",
                  repos = NULL)
 ```
 
-## Features
-
-The aim of the `fssetup` package is to standardise how we use R and
-encourage the use of coding best practice across Farming Stats. Below is
-a brief description of the key features and functions within the package
-and how to use them. More details can be found in the accompanying
-package material.
-
-### Projects
+## Projects
 
 R projects should be the default way of working for any work undertaken
 in R. To standardise how we set out and use projects, this package
@@ -53,7 +64,7 @@ access this through the new project window in RStudio by going to File
 -\> New Project… Alternatively, you can access the new project window
 through the projects dropdown at the top right of the RStudio window.
 
-#### The project template
+### The project template
 
 A project created using this template will have the skeleton of a R
 project for you. The template looks like this:
@@ -77,7 +88,7 @@ project for you. The template looks like this:
   executes your project. You can source all other material (scripts,
   rmds etc) into this script to be executed.
 
-#### Starting a new project
+### Starting a new project
 
 1.  Go to File -\> New Project…
 2.  The new project window should open, here select “New Directory”:
@@ -115,8 +126,200 @@ project for you. The template looks like this:
 5.  Once you click create project, the new project will be created using
     the Farming Stats template and RStudio will change to this project.
 
-### Scripts templates
+## Script templates
 
-### Addins
+An often overlooked aspect of coding best practice, is including a
+header for your scripts. This should include all the metadata needed for
+someone else to pick up you script, and understand what it is doing and
+why.
 
-### GitHub integration
+The `fssetup` package includes some useful functions to help you
+effortlessly include metadata in all your scripts.
+
+### Default template
+
+The `fssetup` package includes the `add_fs_script_template` function
+that will allow you to set a predefined template script, that all new
+scripts will open with. It comes pre-loaded with a suggested farming
+stats script template (see below). To add this simply run in the console
+as follows:
+
+``` r
+fssetup::create_fs_script_template(format = "farming_stats")
+```
+
+From now on, every script you open will have the farming stats script
+header:
+
+<img src="readme%20images/script_header.png" width="450" />
+
+### Custom template
+
+If you’d prefer a different script header you can pass it to the
+`create_fs_script_template` function and this will be applied instead.
+To do this, run as follows:
+
+``` r
+my_template <- c("Line 1", "Line 2")
+
+fssetup::create_fs_script_template(format = "custom",
+                                   template = my_template)
+```
+
+Once run, all newly open scripts will use your custom template.
+
+### Manually edit the template
+
+An additional option included, is to edit the script manually. To do
+this run the code as follows:
+
+``` r
+fssetup::create_fs_script_template(format = "manual_edit")
+```
+
+This will cause the template file top open in RStudio, you can than make
+any edits you like (even setting a new template). Save the file and
+close it. From here onward, the scripts will open with your edited
+template header.
+
+<div>
+
+> **Tip**
+>
+> Note: using the manual edit is a great way to add your name and email
+> address to the script template, so you don’t have to edit these every
+> time.
+
+</div>
+
+### Removing the template
+
+If at any point you wish to remove you template entirely, simply run the
+following code and all scripts will open as blank files.
+
+``` r
+fssetup::create_fs_script_template(format = "blank")
+```
+
+## GitHub integration
+
+Using version control is an essential part of coding best practice and
+Reproducible Analytical Pipelines. GitHub is one of the most common
+version control tools. Learning to work with GitHub can be a bit
+daunting if you are new to it, but it is strongly recommended that you
+do and you will soon learn to love it.
+
+The `fssetup` package has a number of useful functions to help you get
+started working with GitHub.
+
+<div>
+
+> **Important**
+>
+> Note: for these functions to work you must a) have a GitHub account
+> and b) have Git installed locally on your machine (this can be
+> downloaded from the Company Portal).
+
+</div>
+
+### Setting your GitHub credentials and Personal Access Token.
+
+To use GitHub, you must link your local RStudio istall with GitHub.
+There is a step by step guide of how to do this on the Defra sharepoint
+[here](https://defra.sharepoint.com/:w:/r/sites/Community448/_layouts/15/Doc.aspx?sourcedoc=%7B954065A9-5C68-4351-B42E-872220CDFCA6%7D&file=Linking%20your%20local%20RStudio%20to%20git%20and%20github%20-%20updated.docx&action=default&mobileredirect=true).
+However, this can be a bit off putting as it requires users to interact
+with the command line via the terminal. So the `fssetup` package include
+a handy function to do all the hard work for you.
+
+#### Using the function:
+
+1.  Using the [Defra sharepoint
+    guide](https://defra.sharepoint.com/:w:/r/sites/Community448/_layouts/15/Doc.aspx?sourcedoc=%7B954065A9-5C68-4351-B42E-872220CDFCA6%7D&file=Linking%20your%20local%20RStudio%20to%20git%20and%20github%20-%20updated.docx&action=default&mobileredirect=true)
+    generate you PAT and copy it. Keep it somewhere to hand.
+2.  Then Simply run the following code:
+
+``` r
+fssetup::fs_connect_github(username = "your-github-username",
+                           email = "your-email@defra.com")
+```
+
+3.  In the console a prompt *may* appear asking you if you would like to
+    update your credentials. Choose the option to replace the
+    credentials. If this prompt doesn’t appear, skip to the next step.
+4.  You will then be prompted to paste in your PAT. Do so and hit enter.
+5.  Your RStudio and GitHub accounts will now be linked!
+
+### Creating a GitHub repo for an R project.
+
+As mentioned above, version control is essential to best practice. The
+key step in this is to create a GitHub repository (or repo) to store all
+the code for your project in. This has a huge number of benefits (just
+have a google to find out more). But the steps involved in setting up a
+repo and integrating it into you R project can again be daunting to
+those new to Git.
+
+Again, `fssetup` has simplified the process. Simply do the following.
+
+1.  Open the project you want to connect to git.
+2.  Run the following code:
+
+``` r
+fssetup::fs_use_github()
+```
+
+3.  A lot of text will cycle through the console, telling you what it is
+    doing as it progresses through the rep set up (you can ignore most
+    of this).
+
+4.  At some point, your browser will open and show you your new GitHub
+    repo
+
+    <div>
+
+    > **Tip**
+    >
+    > Sometimes, the browser window shows a page not found error, simply
+    > refresh the page and your repo will appear.
+
+    </div>
+
+5.  You will also get an RStudio prompt telling you that RStudio needs
+    to restart - this is perfectly normal and is to allow RStudio to
+    initialise the Git pane in the RStudio interface.
+
+6.  Once RStudio has restarted, you’re good to go.
+
+<div>
+
+> **Tip**
+>
+> The best time to run this function is when you initially set up your
+> project
+
+</div>
+
+This function will have:
+
+- Created a GitHub repo with the name of your project and do all the
+  initialisation and set up needed. The default is to create a private
+  repo, that is only visible to you.
+
+- Add a gitignore to you project - this will include some a basic files
+  and file types to ignore.
+
+- Perform an initial commit and add all your existing project files to
+  the GtiHub repo.
+
+<div>
+
+> **Warning**
+>
+> Ensure no sensitive data is in your project when you run this function
+> or it could be pushed to GutHub. If working with sensitive data after
+> set up, ensure to add your data files to the gitignore.
+
+</div>
+
+## Addins
+
+## 
