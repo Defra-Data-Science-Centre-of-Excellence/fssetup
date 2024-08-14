@@ -5,7 +5,7 @@ OpenFiles: README.qmd
 
 Parameter: title
 Widget: TextInput
-Label: Readme title
+Label: README title
 Position: left
 
 Parameter: author
@@ -21,6 +21,6 @@ Position: left
 
 Parameter: readme
 Widget: SelectInput
-Label: Readme output format
+Label: README output format
 Fields: html, github, markdown
 Position: right
