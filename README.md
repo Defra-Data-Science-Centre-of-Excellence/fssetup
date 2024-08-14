@@ -1,12 +1,122 @@
 FSsetup package
 ================
 Josh Moatt <joshua.moatt@defra.gov.uk>
-16/05/2024
+14/08/2024
 
-- <a href="#introduction" id="toc-introduction">Introduction</a>
+- <a href="#overview" id="toc-overview">Overview</a>
+- <a href="#installing-fssetup" id="toc-installing-fssetup">Installing
+  <code>fssetup</code></a>
+- <a href="#features" id="toc-features">Features</a>
+  - <a href="#projects" id="toc-projects">Projects</a>
+  - <a href="#scripts-templates" id="toc-scripts-templates">Scripts
+    templates</a>
+  - <a href="#addins" id="toc-addins">Addins</a>
+  - <a href="#github-integration" id="toc-github-integration">GitHub
+    integration</a>
 
-## Introduction
+## Overview
 
-README for FSsetup package.
+This package contains the functions needed to create various features in
+R using the Defra Farming Stats Team templates. Including scripts,
+projects, README and gitignores. It also contains useful functions for
+linking RStudio and RStudio projects to GitHub.
 
-This should be edited manually with key info about the package.
+## Installing `fssetup`
+
+``` r
+devtools::install_github("jpmoatt/fssetup",
+                         auth_token = "PAT",
+```
+
+Alternatively, you can download a .zip copy of this repo and install it
+using this:
+
+``` r
+install.packages("~/Downloads/fssetup.zip",
+                 repos = NULL)
+```
+
+## Features
+
+The aim of the `fssetup` package is to standardise how we use R and
+encourage the use of coding best practice across Farming Stats. Below is
+a brief description of the key features and functions within the package
+and how to use them. More details can be found in the accompanying
+package material.
+
+### Projects
+
+R projects should be the default way of working for any work undertaken
+in R. To standardise how we set out and use projects, this package
+`fssetup` will install a package template into your RStudio IDE. You can
+access this through the new project window in RStudio by going to File
+-\> New Project… Alternatively, you can access the new project window
+through the projects dropdown at the top right of the RStudio window.
+
+#### The project template
+
+A project created using this template will have the skeleton of a R
+project for you. The template looks like this:
+
+- **01_data folder** - this is where you should store your data (unless
+  it is stored securely elsewhere).
+
+- **02_src** - this is where any material you source in (e.g. scripts,
+  functions, rmds, etc) should be stored.
+
+- **03_outputs** - where any outputs should be saved to (e.g. svgs, ods,
+  text files, etc)
+
+- **README** - two files for your README will be added, a quarto (.qmd)
+  file where you can create your README, and the output of your README.
+  This will either be a .html or .md file depending on what option you
+  choose (see below).
+
+- **pipeline** - if selected in the options (see below) and initial
+  pipeline script will be added, this should be the master script which
+  executes your project. You can source all other material (scripts,
+  rmds etc) into this script to be executed.
+
+#### Starting a new project
+
+1.  Go to File -\> New Project…
+2.  The new project window should open, here select “New Directory”:
+
+<img src="readme%20images/new_project_1.png" width="450" />
+
+3.  On the next pane, scroll down and select “Farming Stats Project”
+
+<img src="readme%20images/new_project_2.png" width="450" />
+
+4.  The next pane will ask for some details. Fill in the details (see
+    below) and then click “Create Project”.  
+      
+    The details required are:
+    - Directory name - this will be the project and folder name. This
+      should follow best practice (e.g. “my_new_project” or
+      “my-new-project”).
+
+    - Create project as a subdirectory of - use this to specify where
+      the project should be saved.
+
+    - README title - the title for your README. If blank, this will be
+      auto-populated.
+
+    - Author - your name or initials.
+
+    - Include pipe script - this will include an initial R script within
+      the directory using the `fssetup` script template (see below).
+
+    - README output format - what format your README will take. Default
+      is HTML but can also be GitHub or markdown.
+
+<img src="readme%20images/new_project_3.png" width="450" />
+
+5.  Once you click create project, the new project will be created using
+    the Farming Stats template and RStudio will change to this project.
+
+### Scripts templates
+
+### Addins
+
+### GitHub integration
