@@ -1,35 +1,7 @@
-FSsetup package
+fssetup
 ================
 Josh Moatt <joshua.moatt@defra.gov.uk>
 15/08/2024
-
-- <a href="#purpose" id="toc-purpose">Purpose</a>
-- <a href="#installing-fssetup" id="toc-installing-fssetup">Installing
-  <code>fssetup</code></a>
-- <a href="#projects" id="toc-projects">Projects</a>
-  - <a href="#the-project-template" id="toc-the-project-template">The
-    project template</a>
-  - <a href="#starting-a-new-project"
-    id="toc-starting-a-new-project">Starting a new project</a>
-- <a href="#script-templates" id="toc-script-templates">Script
-  templates</a>
-  - <a href="#default-template" id="toc-default-template">Default
-    template</a>
-  - <a href="#custom-template" id="toc-custom-template">Custom template</a>
-  - <a href="#manually-edit-the-template"
-    id="toc-manually-edit-the-template">Manually edit the template</a>
-  - <a href="#removing-the-template" id="toc-removing-the-template">Removing
-    the template</a>
-- <a href="#github-integration" id="toc-github-integration">GitHub
-  integration</a>
-  - <a href="#setting-your-github-credentials-and-personal-access-token."
-    id="toc-setting-your-github-credentials-and-personal-access-token.">Setting
-    your GitHub credentials and Personal Access Token.</a>
-  - <a href="#creating-a-github-repo-for-an-r-project."
-    id="toc-creating-a-github-repo-for-an-r-project.">Creating a GitHub repo
-    for an R project.</a>
-- <a href="#addins" id="toc-addins">Addins</a>
-- <a href="#feedback" id="toc-feedback">Feedback</a>
 
 <!-- badges: start -->
 
@@ -38,6 +10,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/a11ytables.png)](https://CRAN.R-project.org/version/fssetup)
+
 <!-- badges: end -->
 
 ## Purpose
