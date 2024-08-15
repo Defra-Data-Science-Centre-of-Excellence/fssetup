@@ -3,7 +3,7 @@ FSsetup package
 Josh Moatt <joshua.moatt@defra.gov.uk>
 15/08/2024
 
-- <a href="#overview" id="toc-overview">Overview</a>
+- <a href="#purpose" id="toc-purpose">Purpose</a>
 - <a href="#installing-fssetup" id="toc-installing-fssetup">Installing
   <code>fssetup</code></a>
 - <a href="#projects" id="toc-projects">Projects</a>
@@ -31,7 +31,16 @@ Josh Moatt <joshua.moatt@defra.gov.uk>
 - <a href="#addins" id="toc-addins">Addins</a>
 - <a href="#feedback" id="toc-feedback">Feedback</a>
 
-## Overview
+<!-- badges: start -->
+
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/a11ytables.png)](https://CRAN.R-project.org/version/fssetup)
+<!-- badges: end -->
+
+## Purpose
 
 The main aim of the `fssetup` package is to standardise how we use R and
 encourage the use of coding best practice across Farming Stats. However,
@@ -329,6 +338,18 @@ This function will have:
 > Ensure no sensitive data is in your project when you run this function
 > or it could be pushed to GutHub. If working with sensitive data after
 > set up, ensure to add your data files to the gitignore.
+
+</div>
+
+<div>
+
+> **Caution**
+>
+> On very rare occasions this function fails to set the master branch
+> and users are unable to push changes. If this happens try running
+> \`git push -u origin
+> master`in the terminal, this should set you current branch as the master. We're not sure why this happens, but it is advisable to use`fs_connect_github
+> to set your credentials properly before trying this function.
 
 </div>
 

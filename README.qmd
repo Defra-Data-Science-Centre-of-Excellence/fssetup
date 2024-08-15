@@ -10,7 +10,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Overview
+<!-- badges: start -->
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN status](https://www.r-pkg.org/badges/version/a11ytables)](https://CRAN.R-project.org/version/fssetup)
+<!-- badges: end -->
+
+## Purpose
 
 The main aim of the `fssetup` package is to standardise how we use R and encourage the use of coding best practice across Farming Stats. However, it also tries to make getting started working in R simpler, for those who are less experienced in coding. The package contains the functions needed to create various features in R using Farming Stats Team templates. Including scripts, projects, READMEs and gitignores. It also contains useful functions for linking RStudio and RStudio projects to GitHub. We describe the key features and how bet to use them in more detail below.
 
@@ -200,6 +205,10 @@ This function will have:
 
 ::: callout-warning
 Ensure no sensitive data is in your project when you run this function or it could be pushed to GutHub. If working with sensitive data after set up, ensure to add your data files to the gitignore.
+:::
+
+::: callout-caution
+On very rare occasions this function fails to set the master branch and users are unable to push changes. If this happens try running \`git push -u origin master`in the terminal, this should set you current branch as the master. We're not sure why this happens, but it is advisable to use`fs_connect_github to set your credentials properly before trying this function.
 :::
 
 ## Addins
