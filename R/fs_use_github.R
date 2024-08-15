@@ -30,7 +30,7 @@
 #' Creating the GitHub repo uses the [use_github()] function from the `usethis`
 #' package.
 #'
-#' Note: For this function to work you must:
+#' For this function to work you must:
 #'
 #' \itemize{
 #'    \item have git installed on your machine
@@ -38,6 +38,13 @@
 #'    \item have your GitHub credentials entered into RStudio
 #'    \item have your Personal Access Token (PAT) entered in RStudio
 #' }
+#'
+#' Note: occasionally the function seems to fails to set the master branch and
+#' users are unable to push changes. If this happens try running `git push -u
+#' origin master` in the terminal, this should set you current branch as the
+#' master. We're not sure why this happens, but it is advisable to use
+#' [fs_connect_github()] to set your credentials properly before trying this
+#' function.
 #'
 #' @param message initial commit message. Default
 #' is "Initial commit".
