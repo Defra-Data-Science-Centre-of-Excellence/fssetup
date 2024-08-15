@@ -5,7 +5,6 @@
 \title{Create a Farming Stats README}
 \usage{
 create_fs_readme(
-  type = c("project", "package"),
   format = c("markdown", "github", "html"),
   file_path = NULL,
   author = NULL,
@@ -13,9 +12,6 @@ create_fs_readme(
 )
 }
 \arguments{
-\item{type}{controls the README template that is produced. Can be "project"
-or "package".}
-
 \item{format}{controls the output format of the README. Default is
 "markdown", but can be "html" or "github".}
 
@@ -32,16 +28,13 @@ Output is a .qmd file containing the desired README template and an initial
 render of the README in the desired output.
 }
 \description{
-Use this function to create a README for a Farming Stats project or package.
+Use this function to create a README for a Farming Stats project.
 }
 \details{
-This function will create a README for a project or package using a
-pre-defined Farming Stats template. The function will create a Quarto (.qmd)
-file and do a first render producing a desired output.
+This function will create a README for a project using a pre-defined Farming
+Stats template. The function will create a Quarto (.qmd) file and do a first
+render producing a desired output.
 
 The output type can be controlled using the format option (default is
 markdown). Can also be html or github (gfm).
-
-The template for projects and packages is slightly different. You can control
-the type of README by using the "type" argument (project or package).
 }

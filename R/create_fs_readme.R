@@ -2,22 +2,15 @@
 #' Create a Farming Stats README
 #'
 #' @description
-#' Use this function to create a README for a Farming Stats project or package.
+#' Use this function to create a README for a Farming Stats project.
 #'
 #' @details
-#' This function will create a README for a project or package using a
-#' pre-defined Farming Stats template. The function will create a Quarto (.qmd)
-#' file and do a first render producing a desired output.
+#' This function will create a README for a project using a pre-defined Farming
+#' Stats template. The function will create a Quarto (.qmd) file and do a first
+#' render producing a desired output.
 #'
 #' The output type can be controlled using the format option (default is
 #' markdown). Can also be html or github (gfm).
-#'
-#' The template for projects and packages is slightly different. You can control
-#' the type of README by using the "type" argument (project or package).
-#'
-#'
-#' @param type controls the README template that is produced. Can be "project"
-#'   or "package".
 #'
 #' @param format controls the output format of the README. Default is
 #'   "markdown", but can be "html" or "github".
@@ -36,9 +29,7 @@
 #'
 #' @export
 
-create_fs_readme <- function(type = c("project",
-                                      "package"),
-                             format = c("markdown",
+create_fs_readme <- function(format = c("markdown",
                                         "github",
                                         "html"),
                              file_path = NULL,
@@ -70,8 +61,6 @@ create_fs_readme <- function(type = c("project",
   }
 
   # set readme text.
-  if (type == "project") {
-  # create string
   readme_txt <- stringr::str_c("---\n",
                                "title: ", readme_title,"\n",
                                "author: ", author,"\n",
@@ -101,24 +90,6 @@ create_fs_readme <- function(type = c("project",
                                "Here explain how to run the project. This should not be a line by line description of the code, rather an overview of how to run the project (what order to run the scripts etc).\n",
                                "\n")
 
-  } else if (type == "package") {
-    readme_txt <- stringr::str_c("---\n",
-                                 "title: ", readme_title, "\n",
-                                 "author: ", author, "\n",
-                                 "date: today\n",
-                                 "date-format: \"DD/MM/YYYY\"\n",
-                                 "format:\n",
-                                 out_format,
-                                 "toc: true\n",
-                                 "editor_options:\n",
-                                 "  chunk_output_type: console\n",
-                                 "---\n",
-                                 "\n",
-                                 "## Introduction\n",
-                                 readme_title, "\n",
-                                 "\n",
-                                 "This should be edited manually with key info about the package.\n")
-  }
 
   # path to save
   if (!is.null(file_path)) {
