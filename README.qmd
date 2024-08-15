@@ -12,7 +12,7 @@ editor_options:
 
 ## Overview
 
-The aim of the `fssetup` package is to standardise how we use R and encourage the use of coding best practice across Farming Stats. The package contains the functions needed to create various features in R using the Farming Stats Team templates. Including scripts, projects, READMEs and gitignores. It also contains useful functions for linking RStudio and RStudio projects to GitHub.
+The main aim of the `fssetup` package is to standardise how we use R and encourage the use of coding best practice across Farming Stats. However, it also tries to make getting started working in R simpler, for those who are less experienced in coding. The package contains the functions needed to create various features in R using Farming Stats Team templates. Including scripts, projects, READMEs and gitignores. It also contains useful functions for linking RStudio and RStudio projects to GitHub. We describe the key features and how bet to use them in more detail below.
 
 ## Installing `fssetup`
 
@@ -157,13 +157,17 @@ fssetup::fs_connect_github(username = "your-github-username",
 4.  You will then be prompted to paste in your PAT. Do so and hit enter.
 5.  Your RStudio and GitHub accounts will now be linked!
 
+::: callout-tip
+It is recommended that you change you PAT every 30 days. You can use this function to update your PAT each time.
+:::
+
 ### Creating a GitHub repo for an R project.
 
 As mentioned above, version control is essential to best practice. The key step in this is to create a GitHub repository (or repo) to store all the code for your project in. This has a huge number of benefits (just have a google to find out more). But the steps involved in setting up a repo and integrating it into you R project can again be daunting to those new to Git.
 
 Again, `fssetup` has simplified the process. Simply do the following.
 
-1.   Open the project you want to connect to git.
+1.  Open the project you want to connect to git.
 2.  Run the following code:
 
 ``` r
@@ -182,9 +186,9 @@ fssetup::fs_use_github()
 
 6.  Once RStudio has restarted, you're good to go.
 
-::: callout-tip
-The best time to run this function is when you initially set up your project
-:::
+    ::: callout-tip
+    The best time to run this function is when you initially set up your project
+    :::
 
 This function will have:
 
@@ -200,4 +204,32 @@ Ensure no sensitive data is in your project when you run this function or it cou
 
 ## Addins
 
-## 
+The final tool included in `fssetup` are two addins. These open scripts with predefined templates.
+
+"Open Farming Stats script" - this just opens a script with the Farming Stats template. If you've used the `create_fs_script_template` function (described above) and used a custom template, this addin could be useful for adding the standard Farming Stats template if need alongside your custom template.
+
+"Open roxygen script" - this opens a script with a generic roxygen2 set of comments ready for you to complete. Mainly this is useful if you are creating your own package!
+
+::: callout-tip
+Even if you are not going the whole way and creating a package, adding roxygen comments to the top of any functions you create can be a good idea. Firstly, it helps you keep track of what the function is doing (very helpful if you come back to a project after some time). but also, it saves time if you did ever decide to package your functions - as a lot of the work will be done for you.
+:::
+
+To access these addins:
+
+1.  Go to the Addins dropdown in the toolbar.
+2.  Scroll down to the `fssetup` subheading.
+3.  Click your addin.
+
+![](readme%20images/addins.png)
+
+## Feedback
+
+As mentioned, the `fssetup` package aims to help standardise the use of R across Farming Stats and make R easier to use for poeple newer to coding. It is still very much a package in development, so we would welcome any and all feedback. We are particularly interested to hear of any functions you would like to see added, or any process in getting started in R that you struggle with, as we might be able to incorporate these into future versions.
+
+Feedback can be sent in a number of ways:
+
+-   Email the EDIT team at [AUK_stats_team\@defra.gov.uk](mailto:AUK_stats_team@defra.gov.uk){.email}
+
+-   Email me directly at [joshua.moatt\@defra.gov.uk](mailto:joshua.moatt@defra.gov.uk){.email}
+
+-   or via GitHub
