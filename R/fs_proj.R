@@ -38,8 +38,7 @@ fs_proj <- function(path, ...) {
                           params$title)
 
 
-  fssetup::create_fs_readme(type = "project",
-                            format = params$readme,
+  fssetup::create_fs_readme(format = params$readme,
                             file_path = path,
                             author = params$author,
                             readme_title = params$title)
