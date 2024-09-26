@@ -33,6 +33,12 @@ To replace existing credentials/PAT choose option 2. You will then be
 prompted for you PAT. PAT should be changed every 30 days to
 ensure security.
 
+An additional feature I have added, not mentioned in the Defra instructions
+is to add the \code{\link[=set_github_pat]{set_github_pat()}} function call to your .Rprofile. This will
+ensure your PAT is set for every R session, meaning you wont need to provide
+your PAT when running functions such as \code{\link[=install_github]{install_github()}} from the devtools
+package.
+
 Note: For this function to work you must:
 
 \itemize{

@@ -20,6 +20,12 @@
 #' prompted for you PAT. PAT should be changed every 30 days to
 #' ensure security.
 #'
+#' An additional feature I have added, not mentioned in the Defra instructions
+#' is to add the [set_github_pat()] function call to your .Rprofile. This will
+#' ensure your PAT is set for every R session, meaning you wont need to provide
+#' your PAT when running functions such as [install_github()] from the devtools
+#' package.
+#'
 #' Note: For this function to work you must:
 #'
 #' \itemize{
@@ -67,5 +73,33 @@ fs_connect_github <- function(username,
   pat <- Sys.getenv("GITHUB_PAT")
   cli::cli_alert_success("GitHub pat is {pat}")
   cli::cli_alert_warning("Check this is as expected!")
+
+  ## update .Rprofile ----
+  # set path
+  rprofile_path <- "~/.Rprofile"
+
+  # check if function call present
+  rprofile_lines <- readLines(rprofile_path)
+
+  # check for function
+  cred_line <- grep("credentials", rprofile_lines)
+
+  # update .Rprofile
+  if (length(cred_line) == 0) {
+
+    # create function as string
+    cred_func <- 'credentials::set_github_pat(verbose = FALSE)\n'
+
+    # add to .Rprofile
+    rprofile_lines <- c(rprofile_lines, cred_func)
+
+    # write lines
+    writeLines(rprofile_lines, rprofile_path)
+
+    cli::cli_alert_success("Added {.code credentials::set_github_pat()} to .Rprofile", wrap = TRUE)
+
+  } else if (length(cred_line) > 0) {
+    cli::cli_alert_success("{.code credentials::set_github_pat()} already in .Rprofile", wrap = TRUE)
+  }
 
 }
