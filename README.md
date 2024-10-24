@@ -1,7 +1,6 @@
-fssetup
-================
+# fssetup
 Josh Moatt <joshua.moatt@defra.gov.uk>
-15/08/2024
+24/10/2024
 
 <!-- badges: start -->
 
@@ -22,8 +21,9 @@ who are less experienced in coding. The package contains the functions
 needed to create various features in R using Farming Stats Team
 templates. Including scripts, projects, READMEs and gitignores. It also
 contains useful functions for linking RStudio and RStudio projects to
-GitHub. We describe the key features and how bet to use them in more
-detail below.
+GitHub. A recent update is the inclusion of some helpful tools for
+working with the DASH Unity Catalog (e.g. pulling and saving data). We
+describe the key features and how bet to use them in more detail below.
 
 ## Installing `fssetup`
 
@@ -361,6 +361,22 @@ To access these addins:
 3.  Click your addin.
 
 ![](readme%20images/addins.png)
+
+## DASH Unity Catalog
+
+The DASH platform is the new data analytics platform in Defra. It is
+built using Microsoft databricks. It is a really useful tool and could
+be how we conduct analyses in the future. Currently the DASH Unity
+Catalog (UC), which is used for restricted data and RStudio server,
+where we carry out analyses, cannot directly interact. So you must
+interact with the databricks API and copy data from DASH UC to the
+RStudio server. This package includes some simple functions to read data
+from UC into RStudio cluster on databricks.
+
+Note, you must have set up a databricks PAT in the databricks settings
+before doing this.
+
+More to follow.
 
 ## Feedback
 
