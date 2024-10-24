@@ -24,10 +24,10 @@
 #' data saved in Rstudio cluster.
 #'
 #' @export
-uc_volume_get <- function(workspace,
-                          volume,
-                          token,
-                          out_file) {
+uc_volume_pull <- function(workspace,
+                           volume,
+                           token,
+                           out_file) {
   # set URL
   url <- glue::glue("{workspace}/api/2.0/fs/files/{volume}")
 
