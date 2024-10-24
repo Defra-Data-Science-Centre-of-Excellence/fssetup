@@ -4,8 +4,8 @@
 #' @author Josh Moatt
 #'
 #' @description
-#' Currently the DASH Unity Catalog (UC) and RStudio cserver cannot directly
-#' interact. So you must itneract with the databricks API and copy data from
+#' Currently the DASH Unity Catalog (UC) and RStudio server cannot directly
+#' interact. So you must interact with the databricks API and copy data from
 #' DASH UC to the RStudio server. This is a simple function to read data from UC
 #' into RStudio cluster on databricks.
 #'
@@ -18,7 +18,7 @@
 #'
 #' @param token databricks PAT (string)
 #'
-#' @param out_file filepath in RCluster that data should be stored.
+#' @param out_file filepath on RStudio Cluster that data should be stored.
 #'
 #' @return
 #' data saved in Rstudio cluster.
