@@ -7,7 +7,8 @@
 #' Currently the DASH Unity Catalog (UC) and RStudio server cannot directly
 #' interact. So you must interact with the databricks API and copy data from
 #' DASH UC to the RStudio server. This is a simple function to read data from UC
-#' into RStudio cluster on databricks.
+#' into RStudio cluster on databricks. It is built using the [GET] function from
+#' the httr package.
 #'
 #' Note, you must have set up a databricks PAT in the databricks settings before
 #' doing this.
@@ -24,7 +25,7 @@
 #' data saved in Rstudio cluster.
 #'
 #' @export
-uc_volume_pull <- function(workspace,
+uc_volume_get <- function(workspace,
                            volume,
                            token,
                            out_file) {
