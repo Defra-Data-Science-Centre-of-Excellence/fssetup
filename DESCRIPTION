@@ -19,6 +19,8 @@ Imports:
     gitcreds (>= 0.1.2),
     glue (>= 1.7.0),
     here (>= 1.0.1),
+    httr (>= 1.4.7),
+    httr2 (>= 1.0.5),
     magrittr (>= 2.0.3),
     pkgbuild (>= 1.4.4),
     quarto (>= 1.4.4),
