@@ -42,12 +42,12 @@ uc_volume_put <- function(workspace,
 
   ## write data to data bricks ----
 
-  response <- request(url) %>%
-    req_method("PUT") %>% # PUT request seems to work best
-    req_headers(
+  response <- httr2::request(url) %>%
+    httr2::req_method("PUT") %>% # PUT request seems to work best
+    httr2::req_headers(
       Authorization = glue('Bearer {token}'), # use data bricks PAT
       `Content-Type` = 'multipart/form-data' # may need to incorporate other file types long-term
     ) %>%
-    req_body_file(out_file) %>% # specifies file to export
-    req_perform()
+    httr2::req_body_file(out_file) %>% # specifies file to export
+    httr2::req_perform()
 }
