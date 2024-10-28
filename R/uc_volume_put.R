@@ -20,6 +20,10 @@
 #'
 #' @param token databricks PAT (string)
 #'
+#' @param file name of file to be exported including file extension. Will be
+#'   used to both specify the file to export and specify the file to be created
+#'   on databricks (String).
+#'
 #' @param folder path to folder on RStudio Cluster that contains data to export.
 #'
 #' @return
@@ -28,8 +32,8 @@
 #' @export
 uc_volume_put <- function(workspace,
                           volume,
-                          file,
                           token,
+                          file,
                           folder) {
 
   ## set up ----

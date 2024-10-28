@@ -4,7 +4,7 @@
 \alias{uc_volume_put}
 \title{Write data to the DASH Unity Catalog from RStudio cluster}
 \usage{
-uc_volume_put(workspace, volume, file, token, folder)
+uc_volume_put(workspace, volume, token, file, folder)
 }
 \arguments{
 \item{workspace}{databricks workspace (string)}
@@ -13,6 +13,10 @@ uc_volume_put(workspace, volume, file, token, folder)
 (string)}
 
 \item{token}{databricks PAT (string)}
+
+\item{file}{name of file to be exported including file extension. Will be
+used to both specify the file to export and specify the file to be created
+on databricks (String).}
 
 \item{folder}{path to folder on RStudio Cluster that contains data to export.}
 }
