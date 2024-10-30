@@ -49,7 +49,7 @@ fs_connect_github <- function(username,
                               email) {
 
   # set proxy
-  Sys.setenv(https_proxy = "http://127.0.0.1:9000")
+  Sys.setenv(http_proxy = "http://127.0.0.1:9000")
 
   ## this will run the terminal commands ----
   # proxy
