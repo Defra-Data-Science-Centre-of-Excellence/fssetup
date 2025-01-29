@@ -55,8 +55,7 @@
 #'  for the RStudio server on DASH
 #'
 #' @return
-#' New .R file created at "~/AppData/Roaming/RStudio/templates/default.R"
-#' containing the script template
+#' New .R file created containing the script template
 #'
 #' @export
 

@@ -26,8 +26,7 @@ provided if using format = "custom" or the function will return an error.}
 for the RStudio server on DASH}
 }
 \value{
-New .R file created at "~/AppData/Roaming/RStudio/templates/default.R"
-containing the script template
+New .R file created containing the script template
 }
 \description{
 This function can be used to create a default R script template. All scripts
