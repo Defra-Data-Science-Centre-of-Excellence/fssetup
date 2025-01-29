@@ -51,6 +51,9 @@
 #'   provide custom template design. Must be provided as a string. Must be
 #'   provided if using format = "custom" or the function will return an error.
 #'
+#' @param dash default is FALSE. If TRUE changes the file path to the one needed
+#'  for the RStudio server on DASH
+#'
 #' @return
 #' New .R file created at "~/AppData/Roaming/RStudio/templates/default.R"
 #' containing the script template
@@ -61,15 +64,18 @@ create_fs_script_template <- function(format = c("farming_stats",
                                                  "custom",
                                                  "manual_edit",
                                                  "blank"),
-                                      template = NULL) {
+                                      template = NULL,
+                                      dash = FALSE) {
 
-
+  file_path <- ifelse(dash,
+                      "~/.config/rstudio/templates",
+                      "~/AppData/Roaming/RStudio/templates")
 
   if (format == "farming_stats") {
 
     # create template file if it doesn't exist already
-    if (!fs::file_exists("~/AppData/Roaming/RStudio/templates")) {
-      fs::dir_create(path = "~/AppData/Roaming/RStudio/templates")
+    if (!fs::file_exists(file_path)) {
+      fs::dir_create(path = file_path)
     }
 
     # make FS header template
@@ -121,7 +127,7 @@ create_fs_script_template <- function(format = c("farming_stats",
 
     # Create default R script template with header
     cat(header,
-        file = fs::path_expand("~/AppData/Roaming/RStudio/templates/default.R"),
+        file = fs::path_expand(paste0(file_path, "/default.R")),
         sep = "\n")
 
   } else if (format == "custom") {
@@ -133,31 +139,31 @@ create_fs_script_template <- function(format = c("farming_stats",
     }
 
     # create template file if it doesn't exist already
-    if (!fs::file_exists("~/AppData/Roaming/RStudio/templates")) {
-      fs::dir_create(path = "~/AppData/Roaming/RStudio/templates")
+    if (!fs::file_exists(file_path)) {
+      fs::dir_create(path = file_path)
     }
 
     # Create default R script template with header provided
     cat(template,
-        file = fs::path_expand("~/AppData/Roaming/RStudio/templates/default.R"),
+        file = fs::path_expand(paste0(file_path, "/default.R")),
         sep = "\n")
 
   } else if (format == "manual_edit") {
     # create template file if it doesn't exist already
-    if (!fs::file_exists("~/AppData/Roaming/RStudio/templates")) {
-      fs::dir_create(path = "~/AppData/Roaming/RStudio/templates")
+    if (!fs::file_exists(file_path)) {
+      fs::dir_create(path = file_path)
     }
 
     # Create the default file if doesn't exist already
-    if (!fs::file_exists("~/AppData/Roaming/RStudio/templates/default.R")) {
-      fs::file_create("~/AppData/Roaming/RStudio/templates/default.R")
+    if (!fs::file_exists(paste0(file_path, "/default.R"))) {
+      fs::file_create(paste0(file_path, "/default.R"))
     }
 
     # Open the file in RStudio to edit it
-    usethis::edit_file("~/AppData/Roaming/RStudio/templates/default.R")
+    usethis::edit_file(paste0(file_path, "/default.R"))
 
   } else if (format == "blank") {
     # this removes any pre-existing defaults
-    fs::file_delete("~/AppData/Roaming/RStudio/templates/default.R")
+    fs::file_delete(paste0(file_path, "/default.R"))
   }
 }

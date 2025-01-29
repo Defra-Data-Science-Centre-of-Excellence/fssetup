@@ -6,7 +6,8 @@
 \usage{
 create_fs_script_template(
   format = c("farming_stats", "custom", "manual_edit", "blank"),
-  template = NULL
+  template = NULL,
+  dash = FALSE
 )
 }
 \arguments{
@@ -20,6 +21,9 @@ edit existing templates.}
 \item{template}{default is NULL, only used if format = "custom". Used to
 provide custom template design. Must be provided as a string. Must be
 provided if using format = "custom" or the function will return an error.}
+
+\item{dash}{default is FALSE. If TRUE changes the file path to the one needed
+for the RStudio server on DASH}
 }
 \value{
 New .R file created at "~/AppData/Roaming/RStudio/templates/default.R"
