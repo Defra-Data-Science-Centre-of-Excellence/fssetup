@@ -64,8 +64,8 @@ create_fs_gitignore <- function (type = "default",
                                     "*.Rproj\n",
                                     "\n",
                                     "## Ignore sensitive files ---- \n",
-                                    "01_data/ \n",
-                                    "03_outputs/ \n",
+                                    "data/ \n",
+                                    "outputs/ \n",
                                     "\n",
                                     "# add additional files as required")
   } else if (type == "custom") {

@@ -44,7 +44,7 @@ fs_proj <- function(path, ...) {
                             readme_title = params$title)
 
   # set file structure
-  structure <- c("01_data", "02_src", "03_outputs")
+  structure <- c("data", "src", "outputs")
 
   # add folders based on structure
   for (i in 1:length(structure)) {
