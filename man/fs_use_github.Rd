@@ -41,6 +41,11 @@ Defra-Data-Science-Centre-of-Excellence organisation on GitHub. You can
 change where the repo is created using the defra_org argument and change
 the repo visibility using the visibility argument when calling the
 function.
+
+Note: this function requires you to have a PAT and to have set this in your
+RStudio envrionment, even if connecting via SSH. This is because a PAT is
+required to create new repos, even when using SSH. See
+\link[usethis:use_github]{usethis::use_github} for more details.
 }
 \details{
 This function will take an existing R project on you local machine,

@@ -10,6 +10,11 @@
 #'   the repo visibility using the visibility argument when calling the
 #'   function.
 #'
+#'   Note: this function requires you to have a PAT and to have set this in your
+#'   RStudio envrionment, even if connecting via SSH. This is because a PAT is
+#'   required to create new repos, even when using SSH. See
+#'   [usethis::use_github] for more details.
+#'
 #' @details This function will take an existing R project on you local machine,
 #'   turn it into a git repo and create a GitHub repository.
 #'
@@ -102,6 +107,10 @@ fs_use_github <- function(message = "Initial commit",
   # check github_method
   if (!github_method %in% c("ssh", "https")) {
     stop('please set connection method to github_method. One of "ssh" or "https"!')
+  }
+
+  if (!nzchar(Sys.getenv("GITHUB_PAT"))) {
+    stop("You don't have a GitHub PAT set, this function requires a PAT. See documentation for more details.")
   }
 
   ## add fs gitignore ----
