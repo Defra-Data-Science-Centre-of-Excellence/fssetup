@@ -4,28 +4,53 @@
 \alias{fs_use_github}
 \title{Create a GitHub repository from local project.}
 \usage{
-fs_use_github(message = "Initial commit", private = TRUE)
+fs_use_github(
+  message = "Initial commit",
+  defra_org = TRUE,
+  visibility = "private",
+  github_method = "ssh"
+)
 }
 \arguments{
-\item{message}{initial commit message. Default
-is "Initial commit".}
+\item{message}{initial commit message. Default is "Initial commit".}
 
-\item{private}{if TRUE creates private repo.}
+\item{defra_org}{logical, default is TRUE. Whether the repo should be created
+under the Defra-Data-Science-Centre-of-Excellence (TRUE) or a personal repo
+(FALSE).}
+
+\item{visibility}{string controlling visibility. One of "private" (default),
+"internal"  or "public". If defra_org is FALSE repos can only be private or
+public. When "internal" used when defra_org is FALSE, a private repo will
+be created.}
+
+\item{github_method}{sting specifying GitHub connection method. One of "ssh"
+or "https". By default, the function uses "ssh" as this is the recommended
+connection method on the DASH platform.}
 }
 \value{
-R project is truned into a git repo and an associated github repo si created
-in the users github account.
+R project is turned into a git repo and an associated github repo si
+created in the users github account.
 }
 \description{
-This simple function will turn your local R project into a git repo, then
-create a repo on GitHub and perform the initial set up and commit.
+This simple function will turn your local R project into a git
+repo, then create a repo on GitHub and perform the initial set up and
+commit.
 
-Note: by default creates a private repo to ensure security. Can be change if
-the repo needs to be public. Can also be done in GitHub at a later date.
+By default it will create a private repo on the
+Defra-Data-Science-Centre-of-Excellence organisation on GitHub. You can
+change where the repo is created using the defra_org argument and change
+the repo visibility using the visibility argument when calling the
+function.
 }
 \details{
-This function will take an existing R project on you local machine, turn it
-into a git repo and create a GitHub repository. It will do the following:
+This function will take an existing R project on you local machine,
+turn it into a git repo and create a GitHub repository.
+
+By default it will create a private repo on the
+Defra-Data-Science-Centre-of-Excellence organisation on GitHub. This can be
+changed using the defra_org argument.
+
+The function will do the following:
 
 \itemize{
 \item add a gitignore
@@ -36,14 +61,28 @@ into a git repo and create a GitHub repository. It will do the following:
 \item restart RStudio to activate the git pane in R
 }
 
-The gitignore is added using the \code{\link[=create_fs_gitignore]{create_fs_gitignore()}} function within this
-package.
+The gitignore is added using the \code{\link[=create_fs_gitignore]{create_fs_gitignore()}} function within
+this package.
 
-The repo initialisation, staging and committing is all done using the \code{gert}
-package.
+The repo initialisation, staging and committing is all done using the
+\code{gert} package.
 
-Creating the GitHub repo uses the \code{\link[=use_github]{use_github()}} function from the \code{usethis}
-package.
+Creating the GitHub repo uses the \code{\link[=use_github]{use_github()}} function from the
+\code{usethis} package.
+
+By default the function will create a private repo. There are three options
+controlled by the visibility argument:
+
+\itemize{
+\item private
+\item internal
+\item public
+}
+
+For the differences between these options, see GitHub. Internal is only an
+option when creating a repo  within the Defra organisation. If createing a
+personal repo with visibility set to "internal", this will create a private
+repo.
 
 For this function to work you must:
 
