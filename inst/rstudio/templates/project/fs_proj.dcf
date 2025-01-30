@@ -13,12 +13,6 @@ Widget: TextInput
 Label: Author
 Position: right
 
-Parameter: pipeline
-Widget: CheckboxInput
-Label: Include pipline script?
-Default: On
-Position: left
-
 Parameter: readme
 Widget: SelectInput
 Label: README output format

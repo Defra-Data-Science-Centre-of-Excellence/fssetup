@@ -37,11 +37,16 @@ fs_proj <- function(path, ...) {
                           "Project title",
                           params$title)
 
-
+  # add readme
   fssetup::create_fs_readme(format = params$readme,
                             file_path = path,
                             author = params$author,
                             readme_title = params$title)
+
+  # add pipeline script
+  fssetup::create_fs_script(file_name = "pipeline",
+                            file_path = path,
+                            author = params$author)
 
   # set file structure
   structure <- c("data", "src", "outputs")
@@ -49,12 +54,6 @@ fs_proj <- function(path, ...) {
   # add folders based on structure
   for (folder in structure) {
     dir.create(file.path(path, folder), recursive = TRUE, showWarnings = FALSE)
-  }
-
-  if (isTRUE(as.logical(params$pipeline))) {
-    fssetup::create_fs_script(file_name = "pipeline",
-                              file_path = path,
-                              author = params$author)
   }
 
 }
