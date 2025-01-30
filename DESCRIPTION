@@ -1,6 +1,6 @@
 Package: fssetup
 Title: Package for Producing R Projects and Scripts Using the Defra Farming Stats Template
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: person(given = "Josh",
                   family = "Moatt",
                   email = "joshua.moatt@defra.gov.uk",
