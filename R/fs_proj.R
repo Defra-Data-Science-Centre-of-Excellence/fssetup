@@ -51,7 +51,7 @@ fs_proj <- function(path, ...) {
     dir.create(glue::glue("{path}/{structure[i]}"))
   }
 
-  if (params$pipeline == TRUE) {
+  if (isTRUE(as.logical(params$pipeline))) {
     fssetup::create_fs_script(file_name = "pipeline",
                               file_path = path,
                               author = params$author)
