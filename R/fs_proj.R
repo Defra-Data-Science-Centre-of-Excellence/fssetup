@@ -47,8 +47,8 @@ fs_proj <- function(path, ...) {
   structure <- c("data", "src", "outputs")
 
   # add folders based on structure
-  for (i in 1:length(structure)) {
-    dir.create(glue::glue("{path}/{structure[i]}"))
+  for (folder in structure) {
+    dir.create(file.path(path, folder), recursive = TRUE, showWarnings = FALSE)
   }
 
   if (isTRUE(as.logical(params$pipeline))) {
