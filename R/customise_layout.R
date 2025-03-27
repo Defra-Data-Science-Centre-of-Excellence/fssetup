@@ -47,12 +47,12 @@ customise_layout <- function(...){
 
 
   # pull a list of current preferences based on the updates we want to make
-  list_current_prefs <- names(list_updated_prefs) %>%
-    purrr::map(~rstudioapi::readRStudioPreference(.x, default = NULL)) %>%
-    stats::setNames(names(list_updated_prefs)) %>%
+  list_current_prefs <- names(list_updated_prefs) |>
+    purrr::map(~rstudioapi::readRStudioPreference(.x, default = NULL)) |>
+    stats::setNames(names(list_updated_prefs)) |>
     purrr::compact()
 
   # overwirte exisitng preferences and safe
-  list_updated_prefs %>%
+  list_updated_prefs |>
     purrr::iwalk(~rstudioapi::writeRStudioPreference(name = .y, value = .x))
 }
