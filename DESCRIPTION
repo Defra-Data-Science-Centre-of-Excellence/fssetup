@@ -24,6 +24,7 @@ Imports:
     magrittr (>= 2.0.3),
     openxlsx (>= 4.2.7.1),
     pkgbuild (>= 1.4.4),
+    purrr (>= 1.0.4),
     quarto (>= 1.4.4),
     readr (>= 2.1.5),
     rstudioapi (>= 0.16.0),
