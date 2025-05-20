@@ -1,6 +1,8 @@
 #' @title
 #' Function for RStudio project template
 #'
+#' @author Josh Moatt
+#'
 #' @description
 #' This is a function that is called in the "New project" viewer pane when the
 #' user chooses a Farming Stats Project template. It should not be used away

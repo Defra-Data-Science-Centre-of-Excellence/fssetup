@@ -1,6 +1,8 @@
 #' @title
 #' Create a new script with farming stats header.
 #'
+#' @author Josh Moatt
+#'
 #' @description
 #' This function will create a new script with the farming stats header added.
 #' There a multiple options for customization (see details).

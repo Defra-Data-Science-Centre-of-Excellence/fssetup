@@ -1,6 +1,8 @@
 #' @title
 #' Create an default R script template.
 #'
+#' @author Josh Moatt
+#'
 #' @description
 #' This function can be used to create a default R script template. All scripts
 #' opened from this point will have this template applied as a header.

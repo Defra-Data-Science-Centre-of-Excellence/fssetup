@@ -1,6 +1,8 @@
 #' @title
 #' Create a gitignore file based on the Farming Stats template
 #'
+#' @author Josh Moatt
+#'
 #' @description
 #' Use this function to create a gitignore for a Farming Stats project.
 #'

@@ -1,6 +1,8 @@
 #' @title
 #' Create a Farming Stats README
 #'
+#' @author Josh Moatt
+#'
 #' @description
 #' Use this function to create a README for a Farming Stats project.
 #'
