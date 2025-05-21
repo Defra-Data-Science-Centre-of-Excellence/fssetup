@@ -39,3 +39,6 @@ Alternatively, a custom gitignore can be provided by setting \verb{type to}
 Note it will replace any existing .gitignore files present in the project
 already.
 }
+\author{
+Josh Moatt
+}

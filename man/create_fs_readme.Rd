@@ -38,3 +38,6 @@ render producing a desired output.
 The output type can be controlled using the format option (default is
 markdown). Can also be html or github (gfm).
 }
+\author{
+Josh Moatt
+}
