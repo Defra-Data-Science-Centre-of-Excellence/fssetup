@@ -67,3 +67,6 @@ all scripts).
 "blank" will delete the default R script and template. This returns R back to
 normal, and any script opened subsequently will be blank.
 }
+\author{
+Josh Moatt
+}

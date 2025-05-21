@@ -56,3 +56,6 @@ The details that can be pre-entered are:
 By default these are set to NULL (except for the date). But can be set to any
 string.
 }
+\author{
+Josh Moatt
+}

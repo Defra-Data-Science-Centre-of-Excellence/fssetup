@@ -104,3 +104,6 @@ master. We're not sure why this happens, but it is advisable to use
 \code{\link[=fs_connect_github]{fs_connect_github()}} to set your credentials properly before trying this
 function.
 }
+\author{
+Josh Moatt
+}

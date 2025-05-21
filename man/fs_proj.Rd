@@ -17,3 +17,6 @@ is not intended to be used outside the template call.
 To subsequently link this to a github repo, the best plan is to use
 \code{\link[=fs_use_github]{fs_use_github()}}.
 }
+\author{
+Josh Moatt
+}

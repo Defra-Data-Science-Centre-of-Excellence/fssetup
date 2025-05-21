@@ -2,7 +2,7 @@
 % Please edit documentation in R/fs_connect_github.R
 \name{fs_connect_github}
 \alias{fs_connect_github}
-\title{Connect RStudio to your GitHub account}
+\title{Connect RStudio to your GitHub account using a Personal Access Token}
 \usage{
 fs_connect_github(username, email)
 }
@@ -15,14 +15,13 @@ fs_connect_github(username, email)
 GitHub credentials and PAT set
 }
 \description{
-This is a simple function which connect RStudio to GitHub, allowing you to
-work on GitHub repositories. This is an essential part of Reproducible
-Analytical Pipelines and best practice for coding.
+This is a simple function which connect RStudio to GitHub using
+a Personal Access Token, allowing you to work on GitHub repositories.
 }
 \details{
-This is a simple function which will set you GitHub credentials and Personal
-Access Token (PAT) and connect RStudio to GitHub. This is essential if you
-want to work in RStudio in projects/repos stored on GitHub.
+This is a simple function which will set you GitHub credentials and
+Personal Access Token (PAT) and connect RStudio to GitHub. This is essential
+if you want to work in RStudio in projects/repos stored on GitHub.
 
 It uses \code{\link[=system]{system()}} to run the necessary code in the terminal to set your
 credentials, and \code{\link[=gitcreds_set]{gitcreds_set()}} and \code{\link[=set_github_pat]{set_github_pat()}} from the \code{gitcreds}
@@ -30,8 +29,7 @@ and \code{credentials} packages to connect your RStudio to GitHub.
 
 \code{\link[=gitcreds_set]{gitcreds_set()}} is an interactive function and will prompt users for input.
 To replace existing credentials/PAT choose option 2. You will then be
-prompted for you PAT. PAT should be changed every 30 days to
-ensure security.
+prompted for you PAT. PAT should be changed every 30 days to ensure security.
 
 An additional feature I have added, not mentioned in the Defra instructions
 is to add the \code{\link[=set_github_pat]{set_github_pat()}} function call to your .Rprofile. This will
@@ -48,4 +46,7 @@ Note: For this function to work you must:
 }
 
 Guidance on how to create a PAT can be found here: ADD LINK.
+}
+\author{
+Josh Moatt
 }
