@@ -63,12 +63,12 @@ fs_connect_ssh <- function(
   dir.create("~/.ssh", showWarnings = FALSE, recursive = TRUE)
 
   # Generate SSH key (no prompts)
-  system(sprintf('ssh-keygen -t ed25519 -C "joshua.moatt@defra.gov.uk" -f %s -N ""', ssh_key_path))
+  system(sprintf('ssh-keygen -t ed25519 -C "%s" -f %s -N ""', email, ssh_key_path))
 
   # messages
   cli::cli_text("")
   cli::cli_alert_success("SSH token created")
-  cli::cli_alert_info("Now copy your SSH token below and add it to your SSH keys on GitHub.com")
+  cli::cli_alert_info("Now copy your SSH token below and add it to your SSH keys at https://github.com/settings/keys :")
   cli::cli_text("")
 
   # Show public key (for adding to GitHub)
