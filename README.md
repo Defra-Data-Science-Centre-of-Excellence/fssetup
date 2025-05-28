@@ -19,6 +19,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fssetup.png)](https://CRAN.R-project.org/version/fssetup)
+![Version](https://img.shields.io/github/v/release/Defra-Data-Science-Centre-of-Excellence/fssetup.png)
 
 <!-- badges: end -->
 
