@@ -74,6 +74,10 @@ fs_connect_github <- function(username,
   # set path
   rprofile_path <- "~/.Rprofile"
 
+  # create R profile if not exist already
+  if (!file.exists(rprofile_path)) {
+    file.create(rprofile_path)
+  }
   # check if function call present
   rprofile_lines <- readLines(rprofile_path)
 
