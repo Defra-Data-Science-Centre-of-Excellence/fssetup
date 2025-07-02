@@ -1,6 +1,6 @@
 # fssetup
 Josh Moatt
-21/05/2025
+28/05/2025
 
 - [Purpose](#purpose)
 - [Installing `fssetup`](#installing-fssetup)
@@ -18,7 +18,8 @@ Josh Moatt
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/a11ytables.png)](https://CRAN.R-project.org/version/fssetup)
+status](https://www.r-pkg.org/badges/version/fssetup.png)](https://CRAN.R-project.org/version/fssetup)
+![Version](https://img.shields.io/github/v/release/Defra-Data-Science-Centre-of-Excellence/fssetup.png)
 
 <!-- badges: end -->
 
