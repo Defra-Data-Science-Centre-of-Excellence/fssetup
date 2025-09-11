@@ -11,7 +11,7 @@ Description: This package contains the functions needed to create various featur
  GitHub. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-Imports:
+Imports: 
     cli (>= 3.6.2),
     credentials (>= 2.0.1),
     fs (>= 1.6.4),
@@ -21,13 +21,14 @@ Imports:
     here (>= 1.0.1),
     httr (>= 1.4.7),
     httr2 (>= 1.0.5),
-    magrittr (>= 2.0.3),
     openxlsx (>= 4.2.7.1),
-    pkgbuild (>= 1.4.4),
+    pacman (>= 0.5.1),
     purrr (>= 1.0.4),
     quarto (>= 1.4.4),
     readr (>= 2.1.5),
+    rlang (>= 1.1.6),
     rstudioapi (>= 0.16.0),
+    stats (>= 4.2.2),
     stringr (>= 1.5.1),
     usethis (>= 3.0.0)
 Roxygen: list(markdown = TRUE)
